@@ -1,6 +1,7 @@
 <template lang="pug">
   .index-container
-
+    MatrixSVG2d
+    .content
 
 </template>
 
@@ -14,7 +15,11 @@ export default {}
   height: 100vh;
   width: 100%;
   background-image: url("/blauer-himmel-scale-2_00x.jpeg");
-  background-size: cover;
+  background-size: 50%;
   background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.content {
+  height: 100vh;
 }
 </style>
