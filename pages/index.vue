@@ -3,14 +3,16 @@
     BackgroundBlur
     HeaderHome
     .content
-      MatrixSVG2d
+      LivingMatrix
+
 
 </template>
 
 <script>
 import HeaderHome from "~/components/pages/home/HeaderHome"
+import LivingMatrix from "~/components/pages/home/LivingMatrix"
 export default {
-  components: {HeaderHome}
+  components: {LivingMatrix, HeaderHome}
 }
 </script>
 
