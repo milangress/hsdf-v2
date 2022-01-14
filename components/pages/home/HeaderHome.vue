@@ -31,5 +31,6 @@ export default {
   color: #ff0000;
   letter-spacing: -0.05em;
   text-shadow: 0 0 6px #fff, 0 0 16px #fff, 0 0 26px #fff, 0 0 36px #fff;
+  filter: url(#displacementFilter)
 }
 </style>
