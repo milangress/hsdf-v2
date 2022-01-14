@@ -30,7 +30,7 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 1rem;
-  padding: 1rem;
+  /*padding: 1rem;*/
 }
 .box {
   background-color: rgba(204, 204, 204, 204.5);

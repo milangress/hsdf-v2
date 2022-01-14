@@ -2,8 +2,16 @@
   font-family: "ArmandGrotesk";
   src: local("ArmandGrotesk"),
   url(~assets/css/fonts/ArmandGroteskTRIAL-Bold.otf) format("opentype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "ArmandGrotesk";
+  src: local("ArmandGrotesk"),
+  url(~assets/css/fonts/ArmandGroteskTRIAL-SemiLight.otf) format("opentype");
+  font-weight: normal;
+  font-stretch: 87.5% 112.5%;
 }
 
 html {
-  font-family: "ArmandGrotesk";
+  font-family: "ArmandGrotesk", sans-serif;
 }

@@ -4,6 +4,8 @@
     HeaderHome
     .content
       LivingMatrix
+      ProjectLinks
+
 
 
 </template>
@@ -11,8 +13,9 @@
 <script>
 import HeaderHome from "~/components/pages/home/HeaderHome"
 import LivingMatrix from "~/components/pages/home/LivingMatrix"
+import ProjectLinks from "~/components/pages/home/ProjectLinks"
 export default {
-  components: {LivingMatrix, HeaderHome}
+  components: {ProjectLinks, LivingMatrix, HeaderHome}
 }
 </script>
 
