@@ -2,6 +2,8 @@
   .index-container
     BackgroundBlur
     HeaderHome
+    nav
+      BlurBox(bg-color="#fef264") About
     .content
       LivingMatrix
       ProjectLinks
@@ -23,5 +25,19 @@ export default {
 
 .content {
   height: 100vh;
+}
+nav {
+  height: min-content;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 3rem;
+  color: #3372ed;
+  transform: scaleX(0.8);
+  filter: url(#displacementFilter);
+}
+nav:hover {
+  /*filter: invert(1);*/
+  mix-blend-mode: difference;
 }
 </style>
