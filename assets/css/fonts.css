@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "ArmandGrotesk";
+  src: local("ArmandGrotesk"),
+  url(~assets/css/fonts/ArmandGroteskTRIAL-Bold.otf) format("opentype");
+}
+
+html {
+  font-family: "ArmandGrotesk";
+}
