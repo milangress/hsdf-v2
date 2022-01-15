@@ -17,7 +17,7 @@ export default {
   background-repeat: repeat-y;
   background-size: 100%;
   background-position: center;
-  filter: blur(20px);
+  filter: blur(10px);
 }
 
 </style>
