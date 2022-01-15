@@ -3,7 +3,8 @@
     BackgroundBlur
     HeaderHome
     nav
-      BlurBox(bg-color="#fef264") About
+      NuxtLink(to="about")
+        BlurBox(bg-color="#fef264") About
     .content
       LivingMatrix
       ProjectLinks
@@ -32,9 +33,12 @@ nav {
   top: 2rem;
   left: 2rem;
   font-size: 3rem;
-  color: #3372ed;
   transform: scaleX(0.8);
   filter: url(#displacementFilter);
+}
+nav a {
+  color: #3372ed;
+  text-decoration: none;
 }
 nav:hover {
   /*filter: invert(1);*/

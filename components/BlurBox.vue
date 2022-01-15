@@ -31,5 +31,8 @@ export default {
   width: 100%;
   border-radius: 20%;
 }
+.blur-content {
+  filter: url(#displacementFilter);
+}
 
 </style>
