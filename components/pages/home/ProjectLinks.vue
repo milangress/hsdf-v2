@@ -60,4 +60,12 @@ export default {
   filter: saturate(40000);
 }
 
+@media (max-width: 800px) {
+  .project-links {
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
 </style>
