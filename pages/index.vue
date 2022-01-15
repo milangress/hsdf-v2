@@ -23,6 +23,9 @@ export default {
 </script>
 
 <style>
+body {
+  /*filter: saturate(1.5);*/
+}
 
 .content {
   height: 100vh;
@@ -41,7 +44,7 @@ nav a {
   text-decoration: none;
 }
 nav:hover {
-  /*filter: invert(1);*/
+  /*filter: saturate(40000);*/
   mix-blend-mode: color-dodge;
 }
 </style>

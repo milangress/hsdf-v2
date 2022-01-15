@@ -40,23 +40,24 @@ export default {
   line-height: 1;
   overflow-x: scroll;
   position: relative;
+  filter: saturate(1.5);
 }
 .box p {
   transform: scaleX(0.9);
   margin-bottom: 7rem;
 }
 .box:nth-child(1) {
-  background: linear-gradient(180deg, rgba(0,255,1,1) 0%, rgba(209,209,209,1) 25%, rgba(209,209,209,1) 50%, rgba(255,255,255,1) 75%)
+  background: linear-gradient(180deg, rgba(0,255,1,1) 0%, rgba(209,209,209,1) 30%, rgba(209,209,209,1) 50%, rgba(255,255,255,1) 75%)
 }
 .box:nth-child(2) {
-  background: linear-gradient(180deg, rgba(252,11,11,1) 0%, rgba(209,209,209,1) 25%, rgba(209,209,209,1) 50%, rgba(255,255,255,1) 75%)
+  background: linear-gradient(180deg, rgba(252,11,11,1) 0%, rgba(209,209,209,1) 30%, rgba(209,209,209,1) 50%, rgba(255,255,255,1) 75%)
 }
 .button-bottom {
   position: sticky;
   bottom: 0;
 }
 .button-bottom:hover {
-  mix-blend-mode:color-dodge;
+  filter: saturate(40000);
 }
 
 </style>

@@ -27,7 +27,7 @@ export default {
 }
 .blur-background {
   z-index: -1;
-  filter: blur(15px);
+  filter: blur(15px) !important;
   width: 100%;
   border-radius: 20%;
 }

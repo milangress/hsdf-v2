@@ -15,6 +15,7 @@ export default {
 .header-container {
   height: 100vh;
   display: grid;
+  /*filter: saturate(2);*/
 }
 .header-container > * {
   grid-column: 1;
