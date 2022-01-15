@@ -56,6 +56,7 @@ export default {
   bottom: 0;
 }
 .button-bottom:hover {
+  mix-blend-mode:color-dodge;
 }
 
 </style>

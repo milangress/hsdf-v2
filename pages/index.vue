@@ -42,6 +42,6 @@ nav a {
 }
 nav:hover {
   /*filter: invert(1);*/
-  mix-blend-mode: difference;
+  mix-blend-mode: color-dodge;
 }
 </style>
