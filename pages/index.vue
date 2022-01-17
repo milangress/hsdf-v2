@@ -25,6 +25,8 @@ export default {
 <style>
 body {
   /*filter: saturate(1.5);*/
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .content {
