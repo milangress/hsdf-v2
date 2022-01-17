@@ -4,7 +4,7 @@
     .about-content
       nav
         NuxtLink(to="/")
-          BlurBox(bg-color="#ffffff") <- back
+          BlurBox(bg-color="#ffffff") 🢨 back
       .line.left-line
       .line.right-line
       .line.vertical-1
@@ -56,7 +56,7 @@ nav {
   left: 2rem;
   font-size: 3rem;
   transform: scaleX(0.8);
-  filter: url(#globalDisplacementFilter);
+  filter: url("http://localhost:3000/about#globalDisplacementFilter");
 }
 nav a {
   color: #3372ed;

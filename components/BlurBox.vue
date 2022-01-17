@@ -20,6 +20,9 @@ export default {
 <style scoped>
 .blur-wrapper {
   display: grid;
+  margin: -3rem;
+  padding: 3rem;
+  overflow: visible;
 }
 .blur-wrapper > * {
   grid-column: 1;
@@ -32,7 +35,8 @@ export default {
   border-radius: 20%;
 }
 .blur-content {
-  filter: url(#displacementFilter);
+  padding: 0.5rem;
+  /*filter: url(#displacementFilter);*/
 }
 
 </style>
