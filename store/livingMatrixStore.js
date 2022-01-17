@@ -2,6 +2,8 @@ export const state = () => ({
   markers: [
     {
       title: 'Vitreous Body 2021',
+      year: 2020,
+      category: 'scenario',
       pos: {
         x: 20,
         y: 20
@@ -21,6 +23,8 @@ export const state = () => ({
     },
     {
       title: 'Visionary Imaginary Landscape project',
+      year: 2020,
+      category: 'scenario',
       pos: {
         x: 30,
         y: 60
@@ -40,9 +44,32 @@ export const state = () => ({
     },
     {
       title: 'Microscopic Intimacy',
+      year: 2020,
+      category: 'scenario',
       pos: {
         x: 70,
         y: 20
+      },
+      matrix: {
+        1: 'Axis test',
+        2: 'Axis test1',
+        3: 'Axis test3'
+      },
+      szenario: 'Text (lateinisch texere ‚weben‘, ‚flechten‘) bezeichnet im nichtwissenschaftlichen Sprachgebrauch eine abgegrenzte, zusammen- hängende, meist schriftliche sprachliche Äußerung, im weiteren Sinne auch nicht geschriebene, aber schreibbare Sprachinformation (beispielsweise eines Liedes, Films oder einer improvisierten Theater­aufführung). Aus sprachwissenschaftlicher Sicht sind Texte die sprachliche Form einer kommu- nikativen Handlung.',
+      objects: [
+        {
+          title: 'Img title',
+          url: 'test.png',
+        }
+      ]
+    },
+    {
+      title: 'Random Test',
+      year: 2021,
+      category: 'object',
+      pos: {
+        x: 70,
+        y: 60
       },
       matrix: {
         1: 'Axis test',

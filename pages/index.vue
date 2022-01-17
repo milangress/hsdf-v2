@@ -6,7 +6,7 @@
       NuxtLink(to="about")
         BlurBox(bg-color="#fef264") About
     .content
-      LivingMatrix
+      LivingMatrixHomeWithBG
       ProjectLinks
 
 
@@ -15,10 +15,10 @@
 
 <script>
 import HeaderHome from "~/components/pages/home/HeaderHome"
-import LivingMatrix from "~/components/LivingMatrix"
 import ProjectLinks from "~/components/pages/home/ProjectLinks"
+import LivingMatrixHomeWithBG from "~/components/pages/home/LivingMatrixHomeWithBG"
 export default {
-  components: {ProjectLinks, LivingMatrix, HeaderHome}
+  components: {LivingMatrixHomeWithBG, ProjectLinks, HeaderHome}
 }
 </script>
 
