@@ -15,7 +15,7 @@
 
 <script>
 import HeaderHome from "~/components/pages/home/HeaderHome"
-import LivingMatrix from "~/components/pages/home/LivingMatrix"
+import LivingMatrix from "~/components/LivingMatrix"
 import ProjectLinks from "~/components/pages/home/ProjectLinks"
 export default {
   components: {ProjectLinks, LivingMatrix, HeaderHome}

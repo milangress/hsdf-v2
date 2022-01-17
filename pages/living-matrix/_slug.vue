@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import LivingMatrix from "~/components/pages/home/LivingMatrix"
+import LivingMatrix from "~/components/LivingMatrix"
 export default {
   name: "LivingMatrixPage",
   components: {LivingMatrix},
