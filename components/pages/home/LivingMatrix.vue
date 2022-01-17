@@ -7,10 +7,10 @@
       .box
     MatrixSVG2d
     .matrix-overlay
-      .matrix-button(style="left: 5%; top: 5%")
+      NuxtLink.matrix-button(to="living-matrix" style="left: 5%; top: 5%")
         BlurBox() Living Matrix <br> Environment
       template(v-for="marker in markers")
-        .matrix-button(:style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
+        NuxtLink.matrix-button(:to="`/living-matrix/${marker.slug}`" :style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
           BlurBox(bg-color="white") {{marker.title}}
 </template>
 
@@ -19,29 +19,11 @@ export default {
   name: "LivingMatrix",
   data () {
     return {
-      markers: [
-        {
-          title: 'Vitreous Body 2021',
-          pos: {
-            x: 20,
-            y: 20
-          }
-        },
-        {
-          title: 'Visionary Imaginary Landscape project',
-          pos: {
-            x: 30,
-            y: 60
-          }
-        },
-        {
-          title: 'Microscopic Intimacy',
-          pos: {
-            x: 70,
-            y: 20
-          }
-        }
-      ]
+    }
+  },
+  computed: {
+    markers () {
+      return this.$store.getters['livingMatrixStore/getMarkers']
     }
   }
 }
@@ -51,11 +33,17 @@ export default {
 .living-matrix {
   height: 100vh;
   display: grid;
-  margin-top: -4rem;
+  /*margin-top: -4rem;*/
 }
 .living-matrix > * {
   grid-column: 1;
   grid-row: 1;
+}
+a {
+  text-decoration: none;
+}
+a.nuxt-link-active {
+  color: red;
 }
 .grid {
   display: grid;
