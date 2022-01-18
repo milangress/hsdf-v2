@@ -3,13 +3,16 @@
     NuxtLink.matrix-button(to="living-matrix" style="left: 5%; top: 5%")
       BlurBox() Living Matrix <br> Environment
     template(v-for="marker in markers")
-      NuxtLink.matrix-button(:to="`/living-matrix/${marker.slug}`" :style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
+      NuxtLink.matrix-button(v-drag.window-only :to="`/living-matrix/${marker.slug}`" :style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
         BlurBox(bg-color="white") {{marker.title}}
 </template>
 
 <script>
+import drag from '@branu-jp/v-drag'
+
 export default {
   name: "LivingMatrix",
+  directives: {drag},
   data () {
     return {
     }
