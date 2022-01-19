@@ -8,6 +8,7 @@
           p {{marker.category}}
       div(v-if="marker.slug === slug")
         p {{marker.text}}
+        MarkdownSanitizer
     .living-matrix
       .living-matrix-background
         .box
