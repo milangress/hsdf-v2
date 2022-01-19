@@ -2,10 +2,15 @@
   .living-matrix-page
     h1 Work
     p The living matrix is our ongoing research archive
-    template(v-for="marker in markers")
+    select(v-model="selectedFilter")
+      option(disabled value="") Filter
+      template(v-for="category in everyCategory" )
+        option() {{category}}
+
+    template(v-for="marker in filteredMarkers")
       h2()
         NuxtLink(:to="`/living-matrix/${marker.slug}`") {{ marker.year }} {{ marker.title }}
-          p {{marker.category}}
+          span.category {{marker.category}}
       div(v-if="marker.slug === slug")
         //p {{marker.text}}
         MarkdownSanitizer(:input="marker.text")
@@ -23,6 +28,7 @@
 
 <script>
 import LivingMatrix from "~/components/LivingMatrix"
+
 export default {
   name: "LivingMatrixPage",
   components: {LivingMatrix},
@@ -32,12 +38,24 @@ export default {
   },
   data () {
     return {
-      markers: []
+      markers: [],
+      selectedFilter: 'all'
     }
   },
   computed: {
     currentData () {
       return this.markers.find(marker => marker.slug === this.slug)
+    },
+    everyCategory () {
+      const allCat = this.markers.map(marker => marker.category.toLowerCase())
+      return ['all', ...new Set(allCat)]
+    },
+    filteredMarkers () {
+      if (this.selectedFilter === 'all') {
+        return this.markers
+      } else {
+        return this.markers.filter(marker => marker.category.toLowerCase() === this.selectedFilter )
+      }
     }
   },
   async mounted () {
@@ -62,7 +80,12 @@ a {
   text-decoration: none;
 }
 .nuxt-link-active {
-  color: red;
+  /*color: red;*/
+  text-shadow: 0px 0px 5px black;
+}
+.category {
+  font-size: 0.5em;
+  border: 1px solid white;
 }
 .living-matrix {
   display: grid;
