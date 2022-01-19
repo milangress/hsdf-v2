@@ -7,8 +7,8 @@
         NuxtLink(:to="`/living-matrix/${marker.slug}`") {{ marker.year }} {{ marker.title }}
           p {{marker.category}}
       div(v-if="marker.slug === slug")
-        p {{marker.text}}
-        MarkdownSanitizer
+        //p {{marker.text}}
+        MarkdownSanitizer(:input="marker.text")
     .living-matrix
       .living-matrix-background
         .box
