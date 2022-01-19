@@ -1,0 +1,36 @@
+<template lang="pug">
+  .google-form-wrapper
+    p close
+    iframe.google-form(:src="`https://docs.google.com/forms/d/e/1FAIpQLSdADPOukJXFqsM0IZu7HsS-tmXKhZyD-6N0af3pIrZga5YyNw/viewform?usp=pp_url&entry.255041987=${pos}`" frameborder="0")
+</template>
+
+<script>
+export default {
+  name: "GoogleForm",
+  props: {
+    pos: {
+      type: String,
+      default: '50-50'
+    }
+  }
+}
+</script>
+
+<style scoped>
+.google-form-wrapper {
+  z-index: 100000;
+  position: fixed;
+  inset: 1rem;
+  width: 50vw;
+  height: 100vh;
+  /*background-color: blue;*/
+  padding: 1rem;
+  backdrop-filter: blur(25px);
+}
+.google-form {
+  width: 100%;
+  height: 80%;
+  margin: auto;
+}
+
+</style>
