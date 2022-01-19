@@ -16,13 +16,14 @@ export default {
   data () {
     return {
       googleFormIsOpen: false,
-      googleFormPos: '50-50'
+      googleFormPos: '50-50',
+      markers: [],
     }
   },
   computed: {
-    markers () {
-      return this.$store.getters['livingMatrixStore/getMarkers']
-    }
+  },
+  async mounted () {
+    this.markers = await this.$store.dispatch('livingMatrixStore/update')
   },
   methods: {
     openGoogleForm(event) {
@@ -34,7 +35,7 @@ export default {
       this.googleFormPos = `${x}-${y}`
       this.googleFormIsOpen = true;
     }
-  }
+  },
 }
 </script>
 

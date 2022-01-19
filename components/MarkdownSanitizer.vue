@@ -17,12 +17,16 @@ export default {
   computed: {
     mdToHtml() {
       const markdown = marked.parse(this.input)
-      return DOMPurify.sanitize(markdown);
+      const sanitized =  DOMPurify.sanitize(markdown, { USE_PROFILES: { html: true } })
+      return sanitized.replace(/(?:\r\n|\r|\n)/g, '<br>');
     }
   }
 }
 </script>
 
 <style scoped>
-
+.markdown {
+  overflow-wrap: break-word;
+  /*word-break: break-all;*/
+}
 </style>

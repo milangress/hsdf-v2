@@ -155,7 +155,7 @@ const cleanup = function (obj) {
         y: newPos[1]
       },
       slug: entry.title ? slugify(entry.title) : missing('slug-error'),
-      text: entry.text ? entry.text.replace(/(?:\r\n|\r|\n)/g, '<br>') : missing('Text error'),
+      text: entry.text ? entry.text : missing('Text error'), // .replace(/(?:\r\n|\r|\n)/g, '<br>')
       vonUns: (entry.vonuns.toLowerCase() === 'true'),
       og: {
         ...entry
