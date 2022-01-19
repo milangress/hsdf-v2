@@ -145,17 +145,18 @@ const convertToObject = ([keys, ...values]) =>
 
 const cleanup = function (obj) {
   const newObj = obj.map(entry => {
-    const newPos = entry.position.split('-')
+    const newPos = entry.position ? entry.position.split('-') : [0, 0]
     return {
-      title: entry.title,
-      year: entry.year,
-      category: entry.category,
+      title: entry.title || 'Title error',
+      year: entry.year || 404,
+      category: entry.category || 'no category',
       pos: {
         x: newPos[0],
         y: newPos[1]
       },
-      slug: slugify(entry.title),
-      text: entry.text.replace(/(?:\r\n|\r|\n)/g, '<br>'),
+      slug: entry.title ? slugify(entry.title) : 'error',
+      text: entry.text ? entry.text.replace(/(?:\r\n|\r|\n)/g, '<br>') : 'error',
+      vonUns: (entry.vonuns.toLowerCase() === 'true') || false,
       og: {
         ...entry
       }
