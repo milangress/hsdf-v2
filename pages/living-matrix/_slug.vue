@@ -7,7 +7,7 @@
         NuxtLink(:to="`/living-matrix/${marker.slug}`") {{ marker.year }} {{ marker.title }}
           p {{marker.category}}
       div(v-if="marker.slug === slug")
-        p {{marker.szenario}}
+        p {{marker.text}}
     .living-matrix
       .living-matrix-background
         .box
@@ -29,13 +29,22 @@ export default {
     const slug = params.slug // When calling /abc the slug will be "abc"
     return { slug }
   },
+  data () {
+    return {
+      markers: []
+    }
+  },
   computed: {
-    markers () {
-      return this.$store.getters['livingMatrixStore/getMarkers']
-    },
     currentData () {
       return this.markers.find(marker => marker.slug === this.slug)
     }
+  },
+  async mounted () {
+    // eslint-disable-next-line no-console
+    const updated = await this.$store.dispatch('livingMatrixStore/update')
+    // eslint-disable-next-line no-console
+    console.log(updated)
+    this.markers = updated
   },
   methods: {
   }
