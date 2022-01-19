@@ -43,21 +43,6 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    '@nuxtjs/firebase',
-    {
-      config: {
-        apiKey: "AIzaSyDdLPk-7IYZcJHeymj7tTyNkuuupecC2S8",
-        authDomain: "hsdf-matrix.firebaseapp.com",
-        projectId: "hsdf-matrix",
-        storageBucket: "hsdf-matrix.appspot.com",
-        messagingSenderId: "806964704236",
-        appId: "1:806964704236:web:adece7bd7e4a1a2f9fc6c9"
-      },
-      services: {
-        auth: true,
-        firestore: true
-      }
-    }
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
