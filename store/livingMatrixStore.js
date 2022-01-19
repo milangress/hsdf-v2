@@ -147,22 +147,28 @@ const cleanup = function (obj) {
   const newObj = obj.map(entry => {
     const newPos = entry.position ? entry.position.split('-') : [0, 0]
     return {
-      title: entry.title || 'Title error',
-      year: entry.year || 404,
-      category: entry.category || 'no category',
+      title: entry.title || missing('Title error'),
+      year: entry.year || missing(404),
+      category: entry.category || missing('no category'),
       pos: {
         x: newPos[0],
         y: newPos[1]
       },
-      slug: entry.title ? slugify(entry.title) : 'error',
-      text: entry.text ? entry.text.replace(/(?:\r\n|\r|\n)/g, '<br>') : 'error',
-      vonUns: (entry.vonuns.toLowerCase() === 'true') || false,
+      slug: entry.title ? slugify(entry.title) : missing('slug-error'),
+      text: entry.text ? entry.text.replace(/(?:\r\n|\r|\n)/g, '<br>') : missing('Text error'),
+      vonUns: (entry.vonuns.toLowerCase() === 'true'),
       og: {
         ...entry
       }
     }
   })
   return newObj
+}
+
+const missing = function (errorMsg) {
+  // eslint-disable-next-line no-console
+  console.error('Some content is missing in google sheet:', errorMsg)
+  return errorMsg
 }
 
 
