@@ -1,19 +1,23 @@
 <template lang="pug">
   .living-matrix-page
-    h1 Work
-    p The living matrix is our ongoing research archive
-    select(v-model="selectedFilter")
-      option(disabled value="") Filter
-      template(v-for="category in everyCategory" )
-        option() {{category}}
+    nav
+      NuxtLink(to="/")
+        BlurBox(bg-color="#ffffff") 🢨 back
+    section.matrix-top
+      h1 Work
+      p The living matrix is our ongoing research archive
+      select(v-model="selectedFilter")
+        option(disabled value="") Filter
+        template(v-for="category in everyCategory" )
+          option() {{category}}
 
-    template(v-for="marker in filteredMarkers")
-      h2()
-        NuxtLink(:to="`/living-matrix/${marker.slug}`") {{ marker.year }} {{ marker.title }}
-          span.category {{marker.category}}
-      div(v-if="marker.slug === slug")
-        //p {{marker.text}}
-        MarkdownSanitizer(:input="marker.text")
+      template(v-for="marker in filteredMarkers")
+        h2.marker-title(:id="marker.slug")
+          NuxtLink(:to="{path: `/living-matrix/${marker.slug}`, hash: marker.slug}") {{ marker.year }} {{ marker.title }}
+            span.category {{marker.category}}
+        div(v-if="marker.slug === slug")
+          //p {{marker.text}}
+          MarkdownSanitizer(:input="marker.text")
     .living-matrix
       .living-matrix-background
         .box
@@ -83,9 +87,19 @@ a {
   /*color: red;*/
   text-shadow: 0px 0px 5px black;
 }
+.marker-title {
+  filter: url(#globalDisplacementFilter);
+}
 .category {
   font-size: 0.5em;
   border: 1px solid white;
+  margin-left: 0.5em;
+  vertical-align: center;
+}
+section.matrix-top {
+  /*font-size: 2em;*/
+  padding: 50vh 2rem 2rem 2rem;
+  max-width: 50vw;
 }
 .living-matrix {
   display: grid;

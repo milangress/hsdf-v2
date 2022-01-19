@@ -28,5 +28,6 @@ export default {
 .markdown {
   overflow-wrap: break-word;
   /*word-break: break-all;*/
+  /*filter: url(#globalDisplacementFilter);*/
 }
 </style>
