@@ -13,8 +13,10 @@
 
       template(v-for="marker in filteredMarkers")
         h2.marker-title(:id="marker.slug")
-          NuxtLink(:to="{path: `/living-matrix/${marker.slug}`, hash: marker.slug}") {{ marker.year }} {{ marker.title }}
-            span.category {{marker.category}}
+          NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
+            span {{ marker.year }}
+            span {{ marker.title }}
+          span.category(@click="selectedFilter = marker.category.toLowerCase()") {{marker.category}}
         div(v-if="marker.slug === slug")
           //p {{marker.text}}
           MarkdownSanitizer(:input="marker.text")
@@ -88,18 +90,34 @@ a {
   text-shadow: 0px 0px 5px black;
 }
 .marker-title {
-  filter: url(#globalDisplacementFilter);
+  /*filter: url(#globalDisplacementFilter);*/
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 .category {
   font-size: 0.5em;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   margin-left: 0.5em;
   vertical-align: center;
+  background: white;
+  color: black;
+  filter: none;
+  border-radius: 2rem;
+  padding: 0 1em;
 }
 section.matrix-top {
   /*font-size: 2em;*/
   padding: 50vh 2rem 2rem 2rem;
-  max-width: 50vw;
+  max-width: 60vw;
 }
 .living-matrix {
   display: grid;

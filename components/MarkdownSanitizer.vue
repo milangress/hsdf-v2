@@ -1,5 +1,5 @@
 <template lang="pug">
-  p.markdown(v-html="mdToHtml" )
+  div.markdown(v-html="mdToHtml" )
 
 </template>
 
@@ -29,5 +29,15 @@ export default {
   overflow-wrap: break-word;
   /*word-break: break-all;*/
   /*filter: url(#globalDisplacementFilter);*/
+  background-color: white;
+  color: blue;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  max-width: 60vw;
+}
+.markdown > p {
+  display: inline-block;
+  background-color: red;
 }
 </style>
