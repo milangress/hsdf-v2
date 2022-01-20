@@ -15,7 +15,7 @@
       template(v-for="marker in filteredMarkers")
         h2.marker-title(:id="marker.slug")
           NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
-            span {{ marker.year }}
+            span.year {{ marker.year }}
             span {{ marker.title }}
           span
             span.category.vonUns(v-if="marker.vonUns" ) ❤
@@ -99,6 +99,7 @@ a {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.2rem;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
@@ -121,6 +122,10 @@ a {
 }
 .author {
   filter: blur(1px);
+}
+.year {
+  display: inline-block;
+  min-width: 6ch;
 }
 section.matrix-top {
   /*font-size: 2em;*/
