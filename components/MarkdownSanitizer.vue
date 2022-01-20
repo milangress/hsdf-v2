@@ -30,11 +30,12 @@ export default {
   /*word-break: break-all;*/
   /*filter: url(#globalDisplacementFilter);*/
   background-color: white;
-  color: blue;
+  color: black;
   border-radius: 2rem;
   padding: 1rem;
   margin: 1rem 0;
   max-width: 60vw;
+  mix-blend-mode: luminosity;
 }
 .markdown > p {
   display: inline-block;

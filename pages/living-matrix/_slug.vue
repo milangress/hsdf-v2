@@ -1,5 +1,6 @@
 <template lang="pug">
   .living-matrix-page
+    BackgroundBlur
     nav
       NuxtLink(to="/")
         BlurBox(bg-color="#ffffff") 🢨 back
@@ -16,7 +17,10 @@
           NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
             span {{ marker.year }}
             span {{ marker.title }}
-          span.category(@click="selectedFilter = marker.category.toLowerCase()") {{marker.category}}
+          span
+            span.category.vonUns(v-if="marker.vonUns" ) ❤
+            span.category.author(v-if="marker.author" ) {{marker.author}}
+            span.category(@click="selectedFilter = marker.category") {{marker.category}}
         div(v-if="marker.slug === slug")
           //p {{marker.text}}
           MarkdownSanitizer(:input="marker.text")
@@ -53,14 +57,14 @@ export default {
       return this.markers.find(marker => marker.slug === this.slug)
     },
     everyCategory () {
-      const allCat = this.markers.map(marker => marker.category.toLowerCase())
+      const allCat = this.markers.map(marker => marker.category)
       return ['all', ...new Set(allCat)]
     },
     filteredMarkers () {
       if (this.selectedFilter === 'all') {
         return this.markers
       } else {
-        return this.markers.filter(marker => marker.category.toLowerCase() === this.selectedFilter )
+        return this.markers.filter(marker => marker.category.toLowerCase() === this.selectedFilter.toLowerCase() )
       }
     }
   },
@@ -78,7 +82,7 @@ export default {
 
 <style scoped>
 .living-matrix-page {
-  background: #3366ff;
+  /*background: #3366ff;*/
   color: white;
 }
 a {
@@ -112,7 +116,11 @@ a {
   color: black;
   filter: none;
   border-radius: 2rem;
-  padding: 0 1em;
+  padding: 0.1em 1em;
+  filter: blur(1px);
+}
+.author {
+  filter: blur(1px);
 }
 section.matrix-top {
   /*font-size: 2em;*/
