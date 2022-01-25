@@ -153,7 +153,8 @@ section.matrix-top {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 1rem;
+  grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
   /*padding: 1rem;*/
 }
 .box {
