@@ -52,6 +52,13 @@ export default {
       selectedFilter: 'all'
     }
   },
+  async fetch () {
+    // eslint-disable-next-line no-console
+    const updated = await this.$store.dispatch('livingMatrixStore/update')
+    // eslint-disable-next-line no-console
+    console.log(updated)
+    this.markers = updated
+  },
   computed: {
     currentData () {
       return this.markers.find(marker => marker.slug === this.slug)
@@ -67,13 +74,6 @@ export default {
         return this.markers.filter(marker => marker.category.toLowerCase() === this.selectedFilter.toLowerCase() )
       }
     }
-  },
-  async mounted () {
-    // eslint-disable-next-line no-console
-    const updated = await this.$store.dispatch('livingMatrixStore/update')
-    // eslint-disable-next-line no-console
-    console.log(updated)
-    this.markers = updated
   },
   methods: {
   }

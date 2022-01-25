@@ -20,10 +20,10 @@ export default {
       markers: [],
     }
   },
-  computed: {
-  },
-  async mounted () {
+  async fetch () {
     this.markers = await this.$store.dispatch('livingMatrixStore/update')
+  },
+  computed: {
   },
   methods: {
     openGoogleForm(event) {
