@@ -157,7 +157,11 @@ section.matrix-top {
   /*padding: 1rem;*/
 }
 .box {
-  background: linear-gradient(0deg, rgba(204,204,204,1) 20%, rgba(255,204,0,1) 30%, rgba(255,204,0,1) 70%, rgba(204,204,204,1) 80%);
+  background: linear-gradient(0deg,
+  rgba(204,204,204,1) 20%,
+  rgba(255,204,0,1) 30%,
+  rgba(255,204,0,1) 70%,
+  rgba(204,204,204,1) 80%);
   border-radius: 2rem;
   /*mix-blend-mode: soft-light;*/
   backdrop-filter: blur(25px);
