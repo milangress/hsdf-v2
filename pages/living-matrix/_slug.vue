@@ -7,23 +7,28 @@
     section.matrix-top
       h1 Work
       p The living matrix is our ongoing research archive
-      select(v-model="selectedFilter")
-        option(disabled value="") Filter
-        template(v-for="category in everyCategory" )
-          option() {{category}}
 
-      template(v-for="marker in filteredMarkers")
-        h2.marker-title(:id="marker.slug")
-          NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
-            span.year {{ marker.year }}
-            span {{ marker.title }}
-          span
-            span.category.vonUns(v-if="marker.vonUns" ) ❤
-            span.category.author(v-if="marker.author" ) {{marker.author}}
-            span.category(@click="selectedFilter = marker.category") {{marker.category}}
-        div(v-if="marker.slug === slug")
-          //p {{marker.text}}
-          MarkdownSanitizer(:input="marker.text")
+      p(v-if="$fetchState.pending") Loading....
+      p(v-else-if="$fetchState.error") Error while fetching data
+      template(v-else)
+
+        select(v-model="selectedFilter")
+          option(disabled value="") Filter
+          template(v-for="category in everyCategory" )
+            option() {{category}}
+
+        template(v-for="marker in filteredMarkers")
+          h2.marker-title(:id="marker.slug")
+            NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
+              span.year {{ marker.year }}
+              span {{ marker.title }}
+            span
+              span.category.vonUns(v-if="marker.vonUns" ) ❤
+              span.category.author(v-if="marker.author" ) {{marker.author}}
+              span.category(@click="selectedFilter = marker.category") {{marker.category}}
+          div(v-if="marker.slug === slug")
+            //p {{marker.text}}
+            MarkdownSanitizer(:input="marker.text")
     .living-matrix
       .living-matrix-background
         .box
@@ -64,8 +69,12 @@ export default {
       return this.markers.find(marker => marker.slug === this.slug)
     },
     everyCategory () {
-      const allCat = this.markers.map(marker => marker.category)
-      return ['all', ...new Set(allCat)]
+      if (this.markers) {
+        const allCat = this.markers.map(marker => marker.category)
+        return ['all', ...new Set(allCat)]
+      } else {
+        return ['all']
+      }
     },
     filteredMarkers () {
       if (this.selectedFilter === 'all') {

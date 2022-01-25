@@ -64,6 +64,9 @@ export default {
   publicRuntimeConfig: {
     sheetApiSecret: process.env.SHEET_API
   },
+  privateRuntimeConfig: {
+    sheetApiSecret: process.env.SHEET_API_PRIVATE_SSR
+  },
   router: {
     async scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {

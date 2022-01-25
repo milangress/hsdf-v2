@@ -107,26 +107,33 @@ export const mutations = {
 
 export const actions = {
   async update({state, commit}) {
-    // eslint-disable-next-line no-console
-    console.log(state)
-    if (state.markers.length <= 2) {
+    try {
       // eslint-disable-next-line no-console
-      console.log('load new Markers')
-      const sheetID = '1-NM2-oXiVyXAK2MiGiGS2R6VSnC1wHipyr-GrOZLxAE'
-      const sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/0!A1:Z1001?majorDimension=ROWS&key=${this.$config.sheetApiSecret}`
-      const getResults = await fetch(sheetUrl).then(response => response.json())
-      const lowercase = lowercaseKeys(getResults.values)
-      const obj = cleanup(convertToObject(lowercase))
+      console.log(state)
+      if (state.markers.length <= 2) {
+        // eslint-disable-next-line no-console
+        console.log('load new Markers')
+        const sheetID = '1-NM2-oXiVyXAK2MiGiGS2R6VSnC1wHipyr-GrOZLxAE'
+        const sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/0!A1:Z1001?majorDimension=ROWS&key=${this.$config.sheetApiSecret}`
+        const getResults = await fetch(sheetUrl).then(response => response.json())
+        // eslint-disable-next-line no-console
+        console.log(getResults)
+        const lowercase = lowercaseKeys(getResults.values)
+        const obj = cleanup(convertToObject(lowercase))
+        // eslint-disable-next-line no-console
+        console.log(obj)
+        commit('replaceAll', obj)
+        // eslint-disable-next-line no-console
+        console.log(state.markers)
+        return state.markers
+      } else {
+        // eslint-disable-next-line no-console
+        console.log('Marker cached')
+        return state.markers
+      }
+    } catch (e) {
       // eslint-disable-next-line no-console
-      console.log(obj)
-      commit('replaceAll', obj)
-      // eslint-disable-next-line no-console
-      console.log(state.markers)
-      return state.markers
-    } else {
-      // eslint-disable-next-line no-console
-      console.log('Marker cached')
-      return state.markers
+      console.error(e)
     }
   }
 }
