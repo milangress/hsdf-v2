@@ -97,7 +97,7 @@ export const mutations = {
   },
   replaceAll(state, entry) {
     // eslint-disable-next-line no-console
-    console.log('replaceAll', entry)
+    // console.log('replaceAll', entry)
     state.markers = entry
   },
   remove(state, { todo }) {
@@ -109,31 +109,31 @@ export const actions = {
   async update({state, commit}) {
     try {
       // eslint-disable-next-line no-console
-      console.log(state)
+      // console.log(state)
       if (state.markers.length <= 2) {
         // eslint-disable-next-line no-console
-        console.log('load new Markers')
+        // console.log('load new Markers')
         const sheetID = '1-NM2-oXiVyXAK2MiGiGS2R6VSnC1wHipyr-GrOZLxAE'
         const sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/0!A1:Z1001?majorDimension=ROWS&key=${this.$config.sheetApiSecret}`
         const getResults = await fetch(sheetUrl).then(response => response.json())
         // eslint-disable-next-line no-console
-        console.log(getResults)
+        // console.log(getResults)
         const lowercase = lowercaseKeys(getResults.values)
         const obj = cleanup(convertToObject(lowercase))
         // eslint-disable-next-line no-console
-        console.log(obj)
+        // console.log(obj)
         commit('replaceAll', obj)
         // eslint-disable-next-line no-console
-        console.log(state.markers)
+        // console.log(state.markers)
         return state.markers
       } else {
         // eslint-disable-next-line no-console
-        console.log('Marker cached')
+        // console.log('Marker cached')
         return state.markers
       }
     } catch (e) {
       // eslint-disable-next-line no-console
-      console.error(e)
+      // console.error(e)
     }
   }
 }
@@ -175,7 +175,7 @@ const cleanup = function (obj) {
 
 const missing = function (errorMsg) {
   // eslint-disable-next-line no-console
-  console.error('Some content is missing in google sheet:', errorMsg)
+  // console.error('Some content is missing in google sheet:', errorMsg)
   return errorMsg
 }
 
@@ -190,7 +190,7 @@ export const getters = {
       }
     })
     // eslint-disable-next-line no-console
-    console.log(generateSlugs)
+    // console.log(generateSlugs)
     return generateSlugs
   }
 }

@@ -61,7 +61,7 @@ export default {
     // eslint-disable-next-line no-console
     const updated = await this.$store.dispatch('livingMatrixStore/update')
     // eslint-disable-next-line no-console
-    console.log(updated)
+    // console.log(updated)
     this.markers = updated
   },
   computed: {
