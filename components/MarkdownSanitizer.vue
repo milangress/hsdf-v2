@@ -5,7 +5,9 @@
 
 <script>
 import { marked } from 'marked';
-import DOMPurify from 'dompurify';
+// import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
+
 export default {
   name: "MarkdownSanitizer",
   props: {
