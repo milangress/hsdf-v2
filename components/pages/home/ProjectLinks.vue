@@ -3,11 +3,11 @@
     .box
       p »Highly Speculative Design Fiction« is a research project—somewhere in the blurry field between design and art— Milan Gress and I started this project during our studies at Hochschule Mainz  [DE] and our joint bachelor project originated under the same name/idea and is still in progress today...with »Highly Speculative Design Fiction« is a research project—somewhere in the blurry field between design and art— Milan Gress and I started this project during our studies at Hochschule Mainz  [DE] and our joint bachelor project originated under the same name/idea and is still in progress today...with
       .button-bottom
-        BlurButton(to="https://faas.unreal.enterprises/" bg-color="rgb(0,255,0)") Future as a Service <br> FAAS-Machine
+        BlurButton(to="https://faas.unreal.enterprises/" bg-color="rgb(0,255,0)" extern) Future as a Service <br> FAAS-Machine
     .box
       p »Highly Speculative Design Fiction« is a research project—somewhere in the blurry field between design and art— Milan Gress and I started this project during our studies at Hochschule Mainz  [DE] and our joint bachelor project originated under the same name/idea and is still in progress today...with »Highly Speculative Design Fiction« is a research project—somewhere in the blurry field between design and art— Milan Gress and I started this project during our studies at Hochschule Mainz  [DE] and our joint bachelor project originated under the same name/idea and is still in progress today...with
       .button-bottom
-        BlurButton(to="https://matrix.unreal.enterprises/" bg-color="rgb(252,11,11)") HSDF <br> Matrix
+        BlurButton(to="https://matrix.unreal.enterprises/" bg-color="rgb(252,11,11)" extern) HSDF <br> Matrix
 
 </template>
 

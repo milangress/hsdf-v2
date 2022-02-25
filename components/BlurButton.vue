@@ -1,7 +1,13 @@
 <template lang="pug">
-  NuxtLink.blurBox-button-wrapper(:to="to")
-    BlurBox(:bg-color="bgColor")
-      slot
+  .wrapper
+    template(v-if="extern")
+      a.blurBox-button-wrapper(:href="to" v-if="extern")
+        BlurBox(:bg-color="bgColor")
+          slot
+    template(v-else)
+      NuxtLink.blurBox-button-wrapper(:to="to")
+        BlurBox(:bg-color="bgColor")
+          slot
 </template>
 
 <script>
@@ -15,6 +21,10 @@ export default {
     to: {
       type: String,
       default: "/",
+    },
+    extern: {
+      type: Boolean,
+      default: false,
     }
   }
 }
