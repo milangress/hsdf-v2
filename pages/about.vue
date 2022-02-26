@@ -10,21 +10,30 @@
       .line.vertical-1
       .line.vertical-2
       .text.text-left
-        p Text (lateinisch texere ‚weben‘, ‚flechten‘) bezeichnet im nichtwissenschaftlichen Sprachgebrauch eine abgegrenzte, zusammen- hängende, meist schriftlText iche sprachliche Äußerung, im weiteren Sinne auch nicht geschriebene, aber schreibbare Sprachinformation (beispielsweise eines Liedes, Films oder einer improvisierten Theater­- aufführung). Aus sprachwissenschaftlicher Sicht sind Texte die sprachliche Form einer kommunikativen Handlung.
+        p »Highly Speculative Design Fiction« delivers FaaS — Future as a Service. How would our future be shaped by »a microscopic intimacy to forget about contemporary capitalism«? How could we dream together in »a motionless space apart from ›real‹ desire«? Could we paint a future »without the worst parts of bitter-sweet boomer magic«? or make »The first performance e-meeting in feminine physical space«?
 
-        p Text (lateinisch texere ‚weben‘, ‚flechten‘) bezeichnet im nichtwissenschaftlichen Sprachgebrauch eine abgegrenzte, zusammen- hängende, meist schriftliche sprachliche Äußerung, im weiteren Sinne auch nicht geschriebene, aber schreibbare Sprachinformation (beispielsweise eines Liedes, Films oder einer improvisierten Theater­- aufführung). Aus sprachwissenschaftlicher Sicht sind Texte die sprachliche Form einer kommunikativen Handlung.
+        p Mit diversen Zukunftsszenarien, konkret gestalteten Werkzeugen, sowie realer Designartefakte wollen wir einen Dialog über die Möglichkeiten der Zukunft und die nötige visionäre Pluralität von Zukunftsbildern schaffen.
+
+        p Always remember to keep your "optimism-pessimism" ❦.
+
       .text.text-right
-        p Text (lateinisch texere ‚weben‘, ‚flechten‘) bezeichnet im nichtwissenschaftlichen Sprachgebrauch eine abgegrenzte, zusammen- hängende, meist schriftlText iche sprachliche Äußerung, im weiteren Sinne auch nicht geschriebene, aber schreibbare Sprachinformation (beispielsweise eines Liedes, Films oder einer improvisierten Theater­- aufführung). Aus sprachwissenschaftlicher Sicht sind Texte die sprachliche Form einer kommunikativen Handlung.
+        p Welche Bilder haben wir heute von unserer Zukunft? Fredric Jameson schreibt: Aktuell „[…] ist [es] einfacher, sich das Ende der Welt vorzustellen als das Ende des Kapitalismus.“ Oder wie Nik Baerten es formuliert: „[…] it feels like we are suffering from a collective imagination deficit“.
 
-        p Text (lateinisch texere ‚weben‘, ‚flechten‘) bezeichnet im nichtwissenschaftlichen Sprachgebrauch eine abgegrenzte, zusammen- hängende, meist schriftliche sprachliche Äußerung, im weiteren Sinne auch nicht geschriebene, aber schreibbare Sprachinformation (beispielsweise eines Liedes, Films oder einer improvisierten Theater­- aufführung). Aus sprachwissenschaftlicher Sicht sind Texte die sprachliche Form einer kommunikativen Handlung.
+        p Die heute vorherrschenden Zukunftsbilder sind oftmals geleitet von neoliberaler Ideologie. Die Träume und Visionen, die uns beispielsweise Elon Musk vorschlägt, sind oft nur „Lösungen“ von Superreichen für Mittelreiche. Wir brauchen eine neue visionäre Pluralität und Diversität von kollektiven Zukunftsbildern! Zum einen, um der Komplexität der Zukunft gerecht zu werden und unsere Welt kritisch zu hinterfragen und zum anderen um unsere Imagination zu fordern und Katalysatoren für Handlung zu schaffen.
+
+        p Mit unserer Thesis haben wir eine Methode entwickelt, die es in partizipativen Prozessen erlaubt, die Zukunft als eine gestaltbare zu erleben. »Highly Speculative Design Fiction« betrachtet Fiktion und Realität als gleichwertig und stellt die Fiktion bewusst in den Mittelpunkt der Designpraxis, um über die Zukunft zu spekulieren.
+
+        p Die Methode umfasst das Entwickeln fiktiver Szenarien mithilfe von uns konkret gestalteter Storytelling-Werkzeuge: der »HSDF-Matrix« und der »FaaS-Maschine« sowie die darauffolgende Materialisierung der Szenarien, durch das künstlerische Gestalten von Artefakten.
+
+        p Im Rahmen dieser Arbeit haben wir drei fiktive Szenarien entwickelt und die entsprechenden, gleichnamigen Artefakte umgesetzt: *»Microscopic Intimacy«*, das *»Visionary Imaginary Landscape Project«* und *»Vitreous Body«*. Wir benutzen dabei fiktive absurde Realitäten, um zeitgenössische Dynamiken zu untersuchen und Erkenntnisse über das Hier und Jetzt zu gewinnen.
       .text-left-bottom
       .text-right-bottom
       .contact-wrapper
-        p <em>🙦Contact us</em> <br> post@milanna.de <br> 💦
+        p <em>🙦Contact us</em> <br> real@unreal.enterprises <br> 💦
       .about-us-wrapper
         h3 Milan Gress <br> Annalena Janke
 
-        p The works of Alexandra Crouwers arise in the digital realm, and manifest themsel ves as video installations, text, tapestries, wallpaper, or a modest form of online a ctivismNon linear narratives, science fic tion, ecological grief and virtual diorama s are recurring themes Crouwers behave s as a mediator in time shifting between The Distant Past and the Far Future
+        p
 
         .about-links
           a www.milangress.com
