@@ -12,6 +12,13 @@
   font-stretch: 87.5% 112.5%;
 }
 
+@font-face {
+  font-family: "Sneaky-Times";
+  src: url('/fonts/Sneaky-Times.woff2') format('woff2'),
+  url('/fonts/Sneaky-Times.woff') format('woff');
+  font-weight: normal
+}
+
 html {
   font-family: "ArmandGrotesk", sans-serif;
 }

@@ -1,13 +1,16 @@
 <template lang="pug">
   .header-container
+    FloatTitle
     .headline
       h1 Highly <br> Speculative <br> Design <br> Fiction
     MatrixSVG2d
 </template>
 
 <script>
+import FloatTitle from "~/components/pages/home/FloatTitle"
 export default {
-  name: "HeaderHome"
+  name: "HeaderHome",
+  components: {FloatTitle}
 }
 </script>
 
