@@ -1,9 +1,9 @@
 <template lang="pug">
   .header-container
     FloatTitle
-    .headline
-      h1 Highly <br> Speculative <br> Design <br> Fiction
-    MatrixSVG2d
+    //.headline
+    //  h1 Highly <br> Speculative <br> Design <br> Fiction
+    //MatrixSVG2d
 </template>
 
 <script>
