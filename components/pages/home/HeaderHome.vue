@@ -1,6 +1,6 @@
 <template lang="pug">
   .header-container
-    FloatTitle
+    //FloatTitle
     //.headline
     //  h1 Highly <br> Speculative <br> Design <br> Fiction
     //MatrixSVG2d
