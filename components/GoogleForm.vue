@@ -1,6 +1,6 @@
 <template lang="pug">
   .google-form-wrapper
-    p close
+    button(@click="$emit('closeGoogleForm', true)") close
     iframe.google-form(:src="`https://docs.google.com/forms/d/e/1FAIpQLSdADPOukJXFqsM0IZu7HsS-tmXKhZyD-6N0af3pIrZga5YyNw/viewform?usp=pp_url&entry.255041987=${pos}`" frameborder="0")
 </template>
 
@@ -26,6 +26,7 @@ export default {
   /*background-color: blue;*/
   padding: 1rem;
   backdrop-filter: blur(25px);
+  cursor: auto;
 }
 .google-form {
   width: 100%;

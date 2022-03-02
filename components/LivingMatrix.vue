@@ -1,12 +1,13 @@
 <template lang="pug">
-  .matrix-overlay(@click="openGoogleForm")
+  .matrix-wrapper
     template(v-if="googleFormIsOpen")
-      GoogleForm(:pos="googleFormPos")
-    NuxtLink.matrix-button(to="living-matrix" style="left: 5%; top: 5%")
-      BlurBox() Living Matrix <br> Environment
-    template(v-for="marker in markers")
-      NuxtLink.matrix-button(:to="{path: `/living-matrix/${marker.slug}`, hash: marker.slug}" :style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
-        BlurBox(bg-color="white") {{marker.title}}
+      GoogleForm(:pos="googleFormPos" @closeGoogleForm="closeGoogleForm")
+    .matrix-overlay(@click="openGoogleForm")
+      NuxtLink.matrix-button(to="living-matrix" style="left: 5%; top: 5%")
+        BlurBox() Living Matrix <br> Environment
+      template(v-for="marker in markers")
+        NuxtLink.matrix-button(:to="{path: `/living-matrix/${marker.slug}`, hash: marker.slug}" :style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
+          BlurBox(bg-color="white") {{marker.title}}
 </template>
 
 <script>
@@ -34,6 +35,11 @@ export default {
       const y = Math.round((100 * event.clientY - rect.top) / rect.height)
       this.googleFormPos = `${x}-${y}`
       this.googleFormIsOpen = true;
+    },
+    closeGoogleForm() {
+      // eslint-disable-next-line no-console
+      console.log('close')
+      this.googleFormIsOpen = false;
     }
   },
 }
