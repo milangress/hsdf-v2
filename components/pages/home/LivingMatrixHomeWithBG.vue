@@ -5,7 +5,7 @@
       .box
       .box
       .box
-    MatrixSVG2d
+    MatrixSVG2d(:padding="20")
     LivingMatrix
 
 </template>

@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 .header-container {
-  height: 100vh;
+  height: 98vh;
   display: grid;
   /*filter: saturate(2);*/
 }
