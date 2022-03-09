@@ -144,6 +144,10 @@ section.matrix-top {
 .living-matrix {
   display: grid;
   height: 100vh;
+  width: 50%;
+  position: fixed;
+  top:0;
+  right: 0;
 }
 .living-matrix > * {
   grid-column: 1;

@@ -5,6 +5,8 @@
       nav
         NuxtLink(to="/")
           BlurBox(bg-color="#ffffff") 🢨 back
+      img.small-logo(src="/UnrealEnterprises-Logo-sw-stern_1.png")
+
       .line.left-line
       .line.right-line
       .line.vertical-1
@@ -74,6 +76,14 @@ nav a {
 nav:hover {
   /*filter: saturate(40000);*/
   mix-blend-mode: color-dodge;
+}
+
+.small-logo {
+  max-width: 70vw;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  mix-blend-mode: multiply;
 }
 
 .about-background {
