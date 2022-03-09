@@ -49,6 +49,7 @@ export default {
 
 }
 .front-image {
+  display: none;
   pointer-events: none;
   height: 100vh;
   width: 100%;
