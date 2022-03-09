@@ -45,7 +45,7 @@ export default {
 }
 .box p {
   transform: scaleX(0.9);
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
 }
 .box:nth-child(1) {
   background: linear-gradient(180deg, rgba(0,255,1,1) 0%, rgba(209,209,209,1) 30%, rgba(209,209,209,1) 50%, rgba(255,255,255,1) 75%)
