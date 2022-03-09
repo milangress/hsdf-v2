@@ -72,7 +72,7 @@ export default {
 <style module>
   .wrap {
     overflow-x: hidden;
-    overflow-y: visible;
+    overflow-y: hidden;
     /*overflow: visible;*/
     /*white-space: nowrap;*/
     display: inline-block;

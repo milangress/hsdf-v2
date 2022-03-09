@@ -7,7 +7,7 @@
       NuxtLink(to="about")
         BlurBox(bg-color="#fef264") About
     .content
-      HeadlineBox Living Matrix Environment
+      HeadlineBox Living Matrix
       LivingMatrixHomeWithBG
       HeadlineBox Tools
       ProjectLinks
