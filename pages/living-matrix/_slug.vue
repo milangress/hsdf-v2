@@ -139,7 +139,7 @@ a {
 section.matrix-top {
   /*font-size: 2em;*/
   padding: 50vh 2rem 2rem 2rem;
-  max-width: 60vw;
+  max-width: 50vw;
 }
 .living-matrix {
   display: grid;
