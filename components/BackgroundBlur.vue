@@ -34,7 +34,7 @@ export default {
 .background-image {
   height: 100vh;
   width: 100%;
-  background-image: url("/Startbildschirm-Logo_web.png");
+  background-image: url("/Startbildschirm-HSDf-Groß-ohnelogo.png");
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;

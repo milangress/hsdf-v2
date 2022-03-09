@@ -4,6 +4,7 @@
     //.headline
     //  h1 Highly <br> Speculative <br> Design <br> Fiction
     //MatrixSVG2d
+    img(src="/HSDF-Logo-2022.png")
 </template>
 
 <script>
@@ -23,6 +24,12 @@ export default {
 .header-container > * {
   grid-column: 1;
   grid-row: 1;
+}
+img {
+  height: 100vh;
+  width: 100%;
+  object-fit: contain;
+  object-position: 50% 50%;
 }
 .headline {
   text-align: center;
