@@ -3,8 +3,8 @@
     template(v-if="googleFormIsOpen")
       GoogleForm(:pos="googleFormPos" @closeGoogleForm="closeGoogleForm")
     .matrix-overlay(@click="openGoogleForm")
-      NuxtLink.matrix-button(to="living-matrix" style="left: 5%; top: 5%")
-        BlurBox() Living Matrix <br> Environment
+      //NuxtLink.matrix-button(to="living-matrix" style="left: 5%; top: 5%")
+      //  BlurBox() Living Matrix <br> Environment
       template(v-for="marker in markers")
         NuxtLink.matrix-button(:to="{path: `/living-matrix/${marker.slug}`, hash: marker.slug}" :style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
           BlurBox(bg-color="white") {{marker.title}}
