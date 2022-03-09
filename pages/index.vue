@@ -1,12 +1,15 @@
 <template lang="pug">
   .index-container
     BackgroundBlur
+    StartOverlay
     HeaderHome
     nav
       NuxtLink(to="about")
         BlurBox(bg-color="#fef264") About
     .content
+      HeadlineBox Living Matrix Environment
       LivingMatrixHomeWithBG
+      HeadlineBox Tools
       ProjectLinks
 
 
