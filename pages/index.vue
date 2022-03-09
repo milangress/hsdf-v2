@@ -17,8 +17,10 @@
 import HeaderHome from "~/components/pages/home/HeaderHome"
 import ProjectLinks from "~/components/pages/home/ProjectLinks"
 import LivingMatrixHomeWithBG from "~/components/pages/home/LivingMatrixHomeWithBG"
+import BlurBox from "~/components/BlurBox"
+import BackgroundBlur from "~/components/BackgroundBlur"
 export default {
-  components: {LivingMatrixHomeWithBG, ProjectLinks, HeaderHome}
+  components: {BackgroundBlur, BlurBox, LivingMatrixHomeWithBG, ProjectLinks, HeaderHome}
 }
 </script>
 
