@@ -55,7 +55,7 @@ export default {
 }
 .button-bottom {
   position: sticky;
-  bottom: -3rem;
+  bottom: -2rem;
 }
 .button-bottom:hover {
   filter: saturate(40000);
