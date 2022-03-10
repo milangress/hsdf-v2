@@ -68,7 +68,7 @@ a.nuxt-link-active {
   font-size: 1.5rem;
   line-height: 1;
   color: white !important;
-  text-shadow: 0px 0px 5px black;
+  text-shadow: 0px 0px 15px blue;
   filter: url(#displacementFilter);
 }
 .matrix-button:hover {
