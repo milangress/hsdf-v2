@@ -148,6 +148,10 @@ section.matrix-top {
   position: fixed;
   top:0;
   right: 0;
+  transition: all ease-in-out 0.2s;
+}
+.living-matrix:hover {
+  width: 90%;
 }
 .living-matrix > * {
   grid-column: 1;
