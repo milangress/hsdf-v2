@@ -38,6 +38,7 @@ export default {
   margin: 1rem 0;
   max-width: 60vw;
   mix-blend-mode: luminosity;
+  font-size: 1.5em;
 }
 .markdown > p {
   display: inline-block;
