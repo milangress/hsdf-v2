@@ -73,7 +73,7 @@ a.nuxt-link-active {
   filter: url(#displacementFilter);
 }
 .matrix-button:hover {
-  filter: url(#displacementFilter) blur(1px);
+  filter: url(#displacementFilter) blur(2px);
 }
 
 </style>
