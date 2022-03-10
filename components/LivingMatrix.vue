@@ -7,7 +7,8 @@
       //  BlurBox() Living Matrix <br> Environment
       template(v-for="marker in markers")
         NuxtLink.matrix-button(:to="{path: `/living-matrix/${marker.slug}`, hash: marker.slug}" :style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
-          BlurBox(bg-color="white") {{marker.title}}
+          BlurBoxClean(bg-color="white") {{marker.title}}
+
 </template>
 
 <script>
@@ -60,9 +61,9 @@ a.nuxt-link-active {
   cursor: crosshair;
 }
 .matrix-button {
-  margin: -3rem;
-  padding: 3rem;
-  contain: paint;
+  /*margin: -3rem;*/
+  /*padding: 3rem;*/
+  /*contain: paint;*/
   position: absolute;
   display: inline-block;
   font-size: 1.5rem;
