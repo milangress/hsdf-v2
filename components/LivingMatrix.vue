@@ -69,6 +69,10 @@ a.nuxt-link-active {
   line-height: 1;
   color: white !important;
   text-shadow: 0px 0px 5px black;
+  filter: url(#displacementFilter);
+}
+.matrix-button:hover {
+  filter: url(#displacementFilter) blur(1px);
 }
 
 </style>
