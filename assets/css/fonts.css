@@ -14,26 +14,26 @@
 
 @font-face {
   font-family: "Sneaky-Times";
-  src: url('/fonts/Sneaky-Times.woff2') format('woff2'),
-  url('/fonts/Sneaky-Times.woff') format('woff');
+  src: url('~assets/css/fonts/Sneaky-Times.woff2') format('woff2'),
+  url('~assets/css/fonts/Sneaky-Times.woff') format('woff');
   font-weight: normal
 }
 
 
 @font-face {
   font-family: "authentic";
-  src: url('/fonts/AUTHENTICSans-Condensed-90.woff2') format('woff2'),
-  url('/fonts/AUTHENTICSans-Condensed-90.woff') format('woff');
+  src: url('~assets/css/fonts/AUTHENTICSans-Condensed-90.woff2') format('woff2'),
+  url('~assets/css/fonts/AUTHENTICSans-Condensed-90.woff') format('woff');
   font-weight: normal
 }
 
 @font-face {
-  font-family: "Sissi";
-  src: url('/fonts/SissiDisplay-Trial.otf') format('opentype');
+  font-family: "SissiDisplay";
+  src: url('~assets/css/fonts/SissiDisplay-Regular.woff') format('woff');
   font-weight: normal
 }
 
 html {
-  font-family: "ArmandGrotesk", sans-serif;
+  font-family: "authentic", sans-serif;
   /*font-family: "authentic", sans-serif;*/
 }

@@ -14,7 +14,7 @@ export default {
 
 <style scoped>
 .headline-box {
-  font-family: "SissiDisplay-Regular", serif;
+  font-family: "SissiDisplay", serif;
   text-transform: uppercase;
   width: 100%;
 

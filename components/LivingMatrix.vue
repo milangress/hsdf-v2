@@ -67,6 +67,8 @@ a.nuxt-link-active {
   display: inline-block;
   font-size: 1.5rem;
   line-height: 1;
+  color: white !important;
+  text-shadow: 0px 0px 5px black;
 }
 
 </style>
