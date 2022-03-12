@@ -16,6 +16,8 @@
           option(disabled value="") Filter
           template(v-for="category in everyCategory" )
             option() {{category}}
+        template(v-for="category in everyCategory")
+          span.category-selector {{category}}
 
         template(v-for="marker in filteredMarkers")
           HeadlineBox(:id="marker.slug" :ref="marker.slug")
@@ -95,9 +97,9 @@ export default {
     }
   },
   watch:{
-    $route (to, from){
+    slug (){
       this.$nextTick(() => {
-        window.setTimeout(this.scrollToActive(), 500)
+        window.setTimeout(this.scrollToActive(), 2500)
       })
     }
   },
@@ -160,6 +162,19 @@ a {
 
 .fade-enter, .fade-leave-to {
   opacity: 0;
+}
+.category-selector {
+  font-size: 1.5em;
+  line-height: 0.8;
+  padding-block: .5em;
+  padding-inline: 1em;
+  margin: .5em;
+  border-radius: 2em;
+  background: red;
+}
+.category-selector:hover {
+  background-color: white;
+  color: red;
 }
 .category {
   font-size: 0.5em;
