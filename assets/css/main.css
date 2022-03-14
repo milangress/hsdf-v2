@@ -15,6 +15,9 @@
   </filter> |\
   </svg>#filter');
 }
+body {
+  /*filter: var(--grain);*/
+}
 
 /*
 <animate xlink:href="#filter" id="anim-dialiate" attributeName="scale" from="0" to="20" dur="3s" fill="freeze" /> \

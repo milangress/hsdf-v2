@@ -7,7 +7,8 @@
       NuxtLink(to="about")
         BlurBox(bg-color="#fef264") About
     .content
-      HeadlineBox Living Matrix
+      HeadlineBox
+        NuxtLink(:to="{path: `/living-matrix`}") Living Matrix
       LivingMatrixHomeWithBG
       HeadlineBox Tools
       ProjectLinks

@@ -84,6 +84,11 @@ export default {
   },
   router: {
     async scrollBehavior(to, from, savedPosition) {
+      // eslint-disable-next-line no-console
+      console.log(to, from, savedPosition)
+      if(to.name === 'living-matrix-slug' && from.name === 'living-matrix-slug') {
+        return false;
+      }
       if (savedPosition) {
         return savedPosition;
       }

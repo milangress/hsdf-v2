@@ -1,10 +1,10 @@
 <template lang="pug">
   .living-matrix-page
-    BackgroundBlur
+    //BackgroundBlur
     nav
       NuxtLink(to="/")
         BlurBox(bg-color="#ffffff") 🢨 back
-    section.matrix-top
+    section.matrix-top(:style="styleLeft")
       h1 Work
       p The living matrix is our ongoing research archive
 
@@ -16,20 +16,26 @@
           option(disabled value="") Filter
           template(v-for="category in everyCategory" )
             option() {{category}}
+        template(v-for="category in everyCategory")
+          span.category-selector {{category}}
 
         template(v-for="marker in filteredMarkers")
-          h2.marker-title(:id="marker.slug")
+          HeadlineBox(:id="marker.slug" :ref="marker.slug" :noFilter="true")
             NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
-              span.year {{ marker.year }}
+              span {{ marker.year }}
               span {{ marker.title }}
-            span
-              span.category.vonUns(v-if="marker.vonUns" ) ❤
-              span.category.author(v-if="marker.author" ) {{marker.author}}
-              span.category(@click="selectedFilter = marker.category") {{marker.category}}
+          //h2.marker-title(:id="marker.slug")
+          //  NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
+          //    span.year {{ marker.year }}
+          //    span {{ marker.title }}
+          //  span
+          //    span.category.vonUns(v-if="marker.vonUns" ) ❤
+          //    span.category.author(v-if="marker.author" ) {{marker.author}}
+          //    span.category(@click="selectedFilter = marker.category") {{marker.category}}
           div(v-if="marker.slug === slug")
             //p {{marker.text}}
             MarkdownSanitizer(:input="marker.text")
-    .living-matrix
+    .living-matrix(@mouseover="livingMatrixIsOpen = true" @mouseleave="livingMatrixIsOpen = false")
       .living-matrix-background
         .box
         .box
@@ -54,7 +60,8 @@ export default {
   data () {
     return {
       markers: [],
-      selectedFilter: 'all'
+      selectedFilter: 'all',
+      livingMatrixIsOpen: false
     }
   },
   async fetch () {
@@ -82,17 +89,56 @@ export default {
       } else {
         return this.markers.filter(marker => marker.category.toLowerCase() === this.selectedFilter.toLowerCase() )
       }
+    },
+    styleLeft () {
+      return {
+        transform: this.livingMatrixIsOpen ? "scaleX(0.2)" : "scaleX(1)"
+      }
     }
   },
+  watch:{
+    slug (){
+      this.$nextTick(() => {
+        window.setTimeout(this.scrollToActive(), 2500)
+      })
+    }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.setTimeout(this.scrollToActive(), 500)
+    })
+  },
   methods: {
+    scrollToActive() {
+      this.goto(this.slug)
+    },
+    goto(refName) {
+      try {
+        const element = this.$refs[refName];
+        // eslint-disable-next-line no-console
+        console.log(element[0].$el)
+        const top = element[0].$el.offsetTop;
+        // eslint-disable-next-line no-console
+        // console.log(top)
+
+        window.scrollTo(0, top);
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.error(e)
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
 .living-matrix-page {
-  /*background: #3366ff;*/
+  background: #3366ff;
   color: white;
+  min-height: 100vh;
+}
+nav {
+  z-index: 5;
 }
 a {
   color: unset;
@@ -117,6 +163,19 @@ a {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+.category-selector {
+  font-size: 1.5em;
+  line-height: 0.8;
+  padding-block: .5em;
+  padding-inline: 1em;
+  margin: .5em;
+  border-radius: 2em;
+  background: red;
+}
+.category-selector:hover {
+  background-color: white;
+  color: red;
+}
 .category {
   font-size: 0.5em;
   /*border: 1px solid white;*/
@@ -138,8 +197,10 @@ a {
 }
 section.matrix-top {
   /*font-size: 2em;*/
-  padding: 50vh 2rem 2rem 2rem;
+  padding: 50vh 1rem 1rem 1rem;
   max-width: 50vw;
+  transform-origin: left;
+  transition: all ease-in-out 0.2s;
 }
 .living-matrix {
   display: grid;
@@ -148,6 +209,10 @@ section.matrix-top {
   position: fixed;
   top:0;
   right: 0;
+  transition: all ease-in-out 0.2s;
+}
+.living-matrix:hover {
+  width: 90%;
 }
 .living-matrix > * {
   grid-column: 1;
