@@ -1,14 +1,28 @@
 <template lang="pug">
-  .headline-box
+  .headline-box(:style="filterStyle")
     HorizontalMarquee(:repeat="10" :pause-on-hover="false" :hide-overflow="true" :duration="20")
-      slot
+      slot()
 </template>
 
 <script>
 import HorizontalMarquee from "~/components/shared/HorizontalMarquee"
+
 export default {
   name: "HeadlineBox",
-  components: {HorizontalMarquee}
+  components: {HorizontalMarquee},
+  props: {
+    noFilter: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    filterStyle () {
+      return {
+        filter: this.noFilter ? 'none' : 'var(--grainTest)'
+      }
+    }
+  }
 }
 </script>
 
@@ -36,7 +50,8 @@ export default {
   filter: blur(5px) var(--grain);
 }
 .headline-box > * {
-  filter: var(--grainTest);
+  /*filter: var(--grainTest);*/
+  filter: blur(0px) var(--grain);
 }
 
 </style>

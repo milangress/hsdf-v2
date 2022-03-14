@@ -20,7 +20,7 @@
           span.category-selector {{category}}
 
         template(v-for="marker in filteredMarkers")
-          HeadlineBox(:id="marker.slug" :ref="marker.slug")
+          HeadlineBox(:id="marker.slug" :ref="marker.slug" :noFilter="true")
             NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
               span {{ marker.year }}
               span {{ marker.title }}
