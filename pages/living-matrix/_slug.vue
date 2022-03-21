@@ -51,14 +51,19 @@
 
 <script>
 import LivingMatrix from "~/components/LivingMatrix"
-import BackgroundHydra from "~/components/hydra/BackgroundHydra"
 import BlurBox from "~/components/BlurBox"
 import HeadlineBox from "~/components/HeadlineBox"
 import MarkdownSanitizer from "~/components/MarkdownSanitizer"
 
 export default {
   name: "LivingMatrixPage",
-  components: {MarkdownSanitizer, HeadlineBox, BlurBox, BackgroundHydra, LivingMatrix},
+  components: {
+    MarkdownSanitizer,
+    HeadlineBox,
+    BlurBox,
+    LivingMatrix,
+    BackgroundHydra: () => import('~/components/hydra/BackgroundHydra')
+  },
   asyncData({ params }) {
     const slug = params.slug // When calling /abc the slug will be "abc"
     return { slug }
@@ -104,30 +109,42 @@ export default {
   },
   watch:{
     slug (){
-      this.$nextTick(() => {
-        window.setTimeout(this.scrollToActive(), 2500)
-      })
+      // this.$nextTick(() => {
+      //   // eslint-disable-next-line no-console
+      //   console.log('Called by Watch')
+      //   window.setTimeout(this.scrollToActive(), 5000)
+      // })
     }
   },
   mounted() {
     this.$nextTick(() => {
+      // eslint-disable-next-line no-console
+      console.log('Called by Mounted')
       window.setTimeout(this.scrollToActive(), 500)
     })
   },
   methods: {
     scrollToActive() {
-      this.goto(this.slug)
+      this.$nextTick(() => {
+        // eslint-disable-next-line no-console
+        console.log('Scroll')
+        window.setTimeout(this.goto(this.slug), 15000)
+      })
     },
     goto(refName) {
       try {
-        const element = this.$refs[refName];
+        window.setTimeout(() => {
+        const element = document.getElementById(refName)
+        // const element = this.$refs[refName];
         // eslint-disable-next-line no-console
-        console.log(element[0].$el)
-        const top = element[0].$el.offsetTop;
+        console.log(element)
+        const top = element.offsetTop;
         // eslint-disable-next-line no-console
         // console.log(top)
 
         window.scrollTo(0, top);
+        //   window.scrollTo({ top, behavior: "smooth" });
+        }, 200)
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e)
