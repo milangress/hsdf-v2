@@ -2,6 +2,8 @@
   .headline-box(:style="filterStyle")
     HorizontalMarquee(:repeat="10" :pause-on-hover="false" :hide-overflow="true" :duration="20")
       slot()
+    .footer
+      slot(name="footer")
 </template>
 
 <script>
@@ -47,11 +49,19 @@ export default {
   transition: 0.3s filter linear;
 }
 .headline-box:hover {
-  filter: blur(5px) var(--grain);
+  filter: blur(5px) var(--grain) !important;
 }
-.headline-box > * {
+.headline-box > *:not(.footer) {
   /*filter: var(--grainTest);*/
   filter: blur(0px) var(--grain);
 }
-
+.footer {
+  font-family: "authentic", sans-serif;
+  font-size: 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  filter: var(--grain-min)
+}
 </style>

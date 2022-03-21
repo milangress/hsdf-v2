@@ -26,6 +26,14 @@
             NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
               span {{ marker.year }}
               span {{ marker.title }}
+            template(v-slot:footer)
+              span
+                span.year {{ marker.year }}
+                span {{ marker.title }}
+              span.category-wrapper
+                span.category.vonUns(v-if="marker.vonUns" ) ❤
+                span.category.author(v-if="marker.author" ) {{marker.author}}
+                span.category(@click="selectedFilter = marker.category") {{marker.category}}
           //h2.marker-title(:id="marker.slug")
           //  NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
           //    span.year {{ marker.year }}
@@ -197,24 +205,38 @@ a {
   background-color: white;
   color: red;
 }
+.category-wrapper {
+  display: flex;
+  align-items: center;
+}
 .category {
   font-size: 0.5em;
   /*border: 1px solid white;*/
   margin-left: 0.5em;
+  margin-bottom: 0.5em;
   vertical-align: center;
-  background: white;
-  color: black;
+  /*background: white;*/
+  /*color: black;*/
   filter: none;
+  line-height: 1.1;
   border-radius: 2rem;
-  padding: 0.1em 1em;
-  filter: blur(1px);
+  padding: 0.2em 1em 0.05em 1em;
+  border: 1px solid white;
+  /*filter: blur(1px);*/
+  transition: all 0.2s linear;
+}
+.category:hover {
+  background-color: white;
+  color: black;
+  filter: blur(2px);
 }
 .author {
-  filter: blur(1px);
+  /*filter: blur(1px);*/
+  /*border-color: red;*/
 }
 .year {
-  display: inline-block;
-  min-width: 6ch;
+  font-family: "SissiDisplay", serif;
+  margin-right: 1em;
 }
 section.matrix-top {
   /*font-size: 2em;*/
