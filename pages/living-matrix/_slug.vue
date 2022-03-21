@@ -248,15 +248,17 @@ section.matrix-top {
 .living-matrix {
   display: grid;
   height: 100vh;
-  width: 25%;
+  width: 50%;
   position: fixed;
   top:0;
   right: 0;
   transition: all ease-in-out 0.2s;
   mix-blend-mode: difference;
+  filter: blur(1px)
 }
 .living-matrix:hover {
   width: 90%;
+  filter: none;
 }
 .living-matrix > * {
   grid-column: 1;
