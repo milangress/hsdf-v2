@@ -1,6 +1,6 @@
 <template lang="pug">
   .HydraCanvasWrapper
-    canvas.hydraCanvas(ref="hydraCanvas")
+    canvas.hydraCanvas(ref="hydraCanvas" width="1000px" height="500px")
 </template>
 
 <script>
