@@ -120,15 +120,13 @@ export default {
     this.$nextTick(() => {
       // eslint-disable-next-line no-console
       console.log('Called by Mounted')
-      window.setTimeout(this.scrollToActive(), 500)
+      this.scrollToActive()
     })
   },
   methods: {
     scrollToActive() {
       this.$nextTick(() => {
-        // eslint-disable-next-line no-console
-        console.log('Scroll')
-        window.setTimeout(this.goto(this.slug), 15000)
+        this.goto(this.slug)
       })
     },
     goto(refName) {
@@ -144,7 +142,7 @@ export default {
 
         window.scrollTo(0, top);
         //   window.scrollTo({ top, behavior: "smooth" });
-        }, 200)
+        }, 100)
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e)
