@@ -20,8 +20,11 @@
         //    option() {{category}}
         .category-selector-wrapper
           template(v-for="category in everyCategory")
-            //BlurBoxClean
-            span.category-selector(@click="selectedFilter = category") {{category}}
+            BlurBox()
+              span.category-selector(
+                @click="selectedFilter = category"
+                :class="{ActiveCategory: selectedFilter === category}"
+                ) {{category}}
 
         template(v-for="marker in filteredMarkers")
           HeadlineBox(:id="marker.slug" :ref="marker.slug" :noFilter="true")
@@ -62,7 +65,6 @@
 <script>
 import LivingMatrix from "~/components/LivingMatrix"
 import BlurBox from "~/components/BlurBox"
-import BlurBoxClean from "~/components/BlurBoxClean"
 import HeadlineBox from "~/components/HeadlineBox"
 import MarkdownSanitizer from "~/components/MarkdownSanitizer"
 
@@ -72,7 +74,6 @@ export default {
     MarkdownSanitizer,
     HeadlineBox,
     BlurBox,
-    BlurBoxClean,
     LivingMatrix,
     BackgroundHydra: () => import('~/components/hydra/BackgroundHydra')
   },
@@ -83,7 +84,7 @@ export default {
   data () {
     return {
       markers: [],
-      selectedFilter: 'all',
+      selectedFilter: 'All',
       livingMatrixIsOpen: false
     }
   },
@@ -101,13 +102,13 @@ export default {
     everyCategory () {
       if (this.markers) {
         const allCat = this.markers.map(marker => marker.category)
-        return ['all', ...new Set(allCat)]
+        return ['All', ...new Set(allCat)]
       } else {
-        return ['all']
+        return ['All']
       }
     },
     filteredMarkers () {
-      if (this.selectedFilter === 'all') {
+      if (this.selectedFilter === 'All') {
         return this.markers
       } else {
         return this.markers.filter(marker => marker.category.toLowerCase() === this.selectedFilter.toLowerCase() )
@@ -197,12 +198,13 @@ a {
   opacity: 0;
 }
 .category-selector-wrapper {
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.8em;
 }
 .category-selector {
-  font-size: 1.5em;
+  font-size: 1em;
   line-height: 0.8;
   padding-block: .5em;
   padding-inline: 1em;
@@ -212,6 +214,10 @@ a {
 .category-selector:hover {
   background-color: white;
   color: red;
+}
+.ActiveCategory {
+  background-color: white;
+  filter: blur(5px);
 }
 .category-wrapper {
   display: flex;
