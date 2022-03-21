@@ -49,7 +49,7 @@ export default {
   transition: 0.3s filter linear;
 }
 .headline-box:hover {
-  filter: blur(5px) var(--grain) !important;
+  filter: blur(1px) var(--grainTest) !important;
 }
 .headline-box > *:not(.footer) {
   /*filter: var(--grainTest);*/
