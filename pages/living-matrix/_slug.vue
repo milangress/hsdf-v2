@@ -14,12 +14,14 @@
       p(v-else-if="$fetchState.error") Error while fetching data
       template(v-else)
 
-        select(v-model="selectedFilter")
-          option(disabled value="") Filter
-          template(v-for="category in everyCategory" )
-            option() {{category}}
-        template(v-for="category in everyCategory")
-          span.category-selector {{category}}
+        //select(v-model="selectedFilter")
+        //  option(disabled value="") Filter
+        //  template(v-for="category in everyCategory" )
+        //    option() {{category}}
+        .category-selector-wrapper
+          template(v-for="category in everyCategory")
+            //BlurBoxClean
+            span.category-selector(@click="selectedFilter = category") {{category}}
 
         template(v-for="marker in filteredMarkers")
           HeadlineBox(:id="marker.slug" :ref="marker.slug" :noFilter="true")
@@ -60,6 +62,7 @@
 <script>
 import LivingMatrix from "~/components/LivingMatrix"
 import BlurBox from "~/components/BlurBox"
+import BlurBoxClean from "~/components/BlurBoxClean"
 import HeadlineBox from "~/components/HeadlineBox"
 import MarkdownSanitizer from "~/components/MarkdownSanitizer"
 
@@ -69,6 +72,7 @@ export default {
     MarkdownSanitizer,
     HeadlineBox,
     BlurBox,
+    BlurBoxClean,
     LivingMatrix,
     BackgroundHydra: () => import('~/components/hydra/BackgroundHydra')
   },
@@ -192,12 +196,16 @@ a {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+.category-selector-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+}
 .category-selector {
   font-size: 1.5em;
   line-height: 0.8;
   padding-block: .5em;
   padding-inline: 1em;
-  margin: .5em;
   border-radius: 2em;
   background: red;
 }
