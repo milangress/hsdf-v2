@@ -1,6 +1,8 @@
 <template lang="pug">
   .living-matrix-page
     //BackgroundBlur
+    client-only
+      BackgroundHydra
     nav
       NuxtLink(to="/")
         BlurBox(bg-color="#ffffff") 🢨 back
@@ -49,10 +51,14 @@
 
 <script>
 import LivingMatrix from "~/components/LivingMatrix"
+import BackgroundHydra from "~/components/hydra/BackgroundHydra"
+import BlurBox from "~/components/BlurBox"
+import HeadlineBox from "~/components/HeadlineBox"
+import MarkdownSanitizer from "~/components/MarkdownSanitizer"
 
 export default {
   name: "LivingMatrixPage",
-  components: {LivingMatrix},
+  components: {MarkdownSanitizer, HeadlineBox, BlurBox, BackgroundHydra, LivingMatrix},
   asyncData({ params }) {
     const slug = params.slug // When calling /abc the slug will be "abc"
     return { slug }
