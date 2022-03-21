@@ -23,8 +23,13 @@ import ProjectLinks from "~/components/pages/home/ProjectLinks"
 import LivingMatrixHomeWithBG from "~/components/pages/home/LivingMatrixHomeWithBG"
 import BlurBox from "~/components/BlurBox"
 import BackgroundBlur from "~/components/BackgroundBlur"
+import StartOverlay from "~/components/StartOverlay"
+import HeadlineBox from "~/components/HeadlineBox"
 export default {
-  components: {BackgroundBlur, BlurBox, LivingMatrixHomeWithBG, ProjectLinks, HeaderHome}
+  components: {
+    HeadlineBox,
+    StartOverlay,
+    BackgroundBlur, BlurBox, LivingMatrixHomeWithBG, ProjectLinks, HeaderHome}
 }
 </script>
 

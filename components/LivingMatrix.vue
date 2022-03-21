@@ -13,8 +13,11 @@
 
 <script>
 
+import BlurBoxClean from "~/components/BlurBoxClean"
+import GoogleForm from "~/components/GoogleForm"
 export default {
   name: "LivingMatrix",
+  components: {GoogleForm, BlurBoxClean},
   data () {
     return {
       googleFormIsOpen: false,
