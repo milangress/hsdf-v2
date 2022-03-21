@@ -211,11 +211,12 @@ section.matrix-top {
 .living-matrix {
   display: grid;
   height: 100vh;
-  width: 50%;
+  width: 25%;
   position: fixed;
   top:0;
   right: 0;
   transition: all ease-in-out 0.2s;
+  mix-blend-mode: difference;
 }
 .living-matrix:hover {
   width: 90%;
