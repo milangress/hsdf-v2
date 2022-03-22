@@ -12,8 +12,10 @@
 </template>
 
 <script>
+import BlurButton from "~/components/BlurButton"
 export default {
   name: "ProjectLinks",
+  components: {BlurButton},
 }
 </script>
 

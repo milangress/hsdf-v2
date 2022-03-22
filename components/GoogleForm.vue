@@ -19,13 +19,16 @@ export default {
 <style scoped>
 .google-form-wrapper {
   z-index: 100000;
+  contain: strict;
   position: fixed;
-  inset: 1rem;
+  top: 1rem;
+  right: 1rem;
   width: 50vw;
   height: 100vh;
   /*background-color: blue;*/
   padding: 1rem;
   backdrop-filter: blur(25px);
+  mix-blend-mode: normal;
   cursor: auto;
 }
 .google-form {

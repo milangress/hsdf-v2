@@ -11,8 +11,11 @@
 </template>
 
 <script>
+import LivingMatrix from "~/components/LivingMatrix"
+import MatrixSVG2d from "~/components/MatrixSVG2d"
 export default {
-  name: "LivingMatrixHomeWithBG"
+  name: "LivingMatrixHomeWithBG",
+  components: {MatrixSVG2d, LivingMatrix}
 }
 </script>
 

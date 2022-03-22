@@ -11,8 +11,10 @@
 </template>
 
 <script>
+import BlurBox from "~/components/BlurBox"
 export default {
   name: "BlurButton",
+  components: {BlurBox},
   props: {
     bgColor: {
       type: String,

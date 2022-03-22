@@ -1,6 +1,8 @@
 <template lang="pug">
   .living-matrix-page
     //BackgroundBlur
+    client-only
+      BackgroundHydra
     nav
       NuxtLink(to="/")
         BlurBox(bg-color="#ffffff") 🢨 back
@@ -12,18 +14,31 @@
       p(v-else-if="$fetchState.error") Error while fetching data
       template(v-else)
 
-        select(v-model="selectedFilter")
-          option(disabled value="") Filter
-          template(v-for="category in everyCategory" )
-            option() {{category}}
-        template(v-for="category in everyCategory")
-          span.category-selector {{category}}
+        //select(v-model="selectedFilter")
+        //  option(disabled value="") Filter
+        //  template(v-for="category in everyCategory" )
+        //    option() {{category}}
+        .category-selector-wrapper
+          template(v-for="category in everyCategory")
+            BlurBox()
+              span.category-selector(
+                @click="selectedFilter = category"
+                :class="{ActiveCategory: selectedFilter === category}"
+                ) {{category}}
 
         template(v-for="marker in filteredMarkers")
           HeadlineBox(:id="marker.slug" :ref="marker.slug" :noFilter="true")
             NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
               span {{ marker.year }}
               span {{ marker.title }}
+            template(v-slot:footer)
+              span
+                span.year {{ marker.year }}
+                span {{ marker.title }}
+              span.category-wrapper
+                span.category.vonUns(v-if="marker.vonUns" ) ❤
+                span.category.author(v-if="marker.author" ) {{marker.author}}
+                span.category(@click="selectedFilter = marker.category") {{marker.category}}
           //h2.marker-title(:id="marker.slug")
           //  NuxtLink(:to="{path: `/living-matrix/${marker.slug}`}")
           //    span.year {{ marker.year }}
@@ -49,10 +64,19 @@
 
 <script>
 import LivingMatrix from "~/components/LivingMatrix"
+import BlurBox from "~/components/BlurBox"
+import HeadlineBox from "~/components/HeadlineBox"
+import MarkdownSanitizer from "~/components/MarkdownSanitizer"
 
 export default {
   name: "LivingMatrixPage",
-  components: {LivingMatrix},
+  components: {
+    MarkdownSanitizer,
+    HeadlineBox,
+    BlurBox,
+    LivingMatrix,
+    BackgroundHydra: () => import('~/components/hydra/BackgroundHydra')
+  },
   asyncData({ params }) {
     const slug = params.slug // When calling /abc the slug will be "abc"
     return { slug }
@@ -60,7 +84,7 @@ export default {
   data () {
     return {
       markers: [],
-      selectedFilter: 'all',
+      selectedFilter: 'All',
       livingMatrixIsOpen: false
     }
   },
@@ -78,13 +102,13 @@ export default {
     everyCategory () {
       if (this.markers) {
         const allCat = this.markers.map(marker => marker.category)
-        return ['all', ...new Set(allCat)]
+        return ['All', ...new Set(allCat)]
       } else {
-        return ['all']
+        return ['All']
       }
     },
     filteredMarkers () {
-      if (this.selectedFilter === 'all') {
+      if (this.selectedFilter === 'All') {
         return this.markers
       } else {
         return this.markers.filter(marker => marker.category.toLowerCase() === this.selectedFilter.toLowerCase() )
@@ -98,30 +122,40 @@ export default {
   },
   watch:{
     slug (){
-      this.$nextTick(() => {
-        window.setTimeout(this.scrollToActive(), 2500)
-      })
+      // this.$nextTick(() => {
+      //   // eslint-disable-next-line no-console
+      //   console.log('Called by Watch')
+      //   window.setTimeout(this.scrollToActive(), 5000)
+      // })
     }
   },
   mounted() {
     this.$nextTick(() => {
-      window.setTimeout(this.scrollToActive(), 500)
+      // eslint-disable-next-line no-console
+      console.log('Called by Mounted')
+      this.scrollToActive()
     })
   },
   methods: {
     scrollToActive() {
-      this.goto(this.slug)
+      this.$nextTick(() => {
+        this.goto(this.slug)
+      })
     },
     goto(refName) {
       try {
-        const element = this.$refs[refName];
+        window.setTimeout(() => {
+        const element = document.getElementById(refName)
+        // const element = this.$refs[refName];
         // eslint-disable-next-line no-console
-        console.log(element[0].$el)
-        const top = element[0].$el.offsetTop;
+        console.log(element)
+        const top = element.offsetTop;
         // eslint-disable-next-line no-console
         // console.log(top)
 
         window.scrollTo(0, top);
+        //   window.scrollTo({ top, behavior: "smooth" });
+        }, 100)
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e)
@@ -163,12 +197,17 @@ a {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+.category-selector-wrapper {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+}
 .category-selector {
-  font-size: 1.5em;
+  font-size: 1em;
   line-height: 0.8;
   padding-block: .5em;
   padding-inline: 1em;
-  margin: .5em;
   border-radius: 2em;
   background: red;
 }
@@ -176,24 +215,42 @@ a {
   background-color: white;
   color: red;
 }
+.ActiveCategory {
+  background-color: white;
+  filter: blur(5px);
+}
+.category-wrapper {
+  display: flex;
+  align-items: center;
+}
 .category {
   font-size: 0.5em;
   /*border: 1px solid white;*/
   margin-left: 0.5em;
+  margin-bottom: 0.5em;
   vertical-align: center;
-  background: white;
-  color: black;
+  /*background: white;*/
+  /*color: black;*/
   filter: none;
+  line-height: 1.1;
   border-radius: 2rem;
-  padding: 0.1em 1em;
-  filter: blur(1px);
+  padding: 0.2em 1em 0.05em 1em;
+  border: 1px solid white;
+  /*filter: blur(1px);*/
+  transition: all 0.2s linear;
+}
+.category:hover {
+  background-color: white;
+  color: black;
+  filter: blur(2px);
 }
 .author {
-  filter: blur(1px);
+  /*filter: blur(1px);*/
+  /*border-color: red;*/
 }
 .year {
-  display: inline-block;
-  min-width: 6ch;
+  font-family: "SissiDisplay", serif;
+  margin-right: 1em;
 }
 section.matrix-top {
   /*font-size: 2em;*/
@@ -210,9 +267,12 @@ section.matrix-top {
   top:0;
   right: 0;
   transition: all ease-in-out 0.2s;
+  mix-blend-mode: difference;
+  filter: blur(1px)
 }
 .living-matrix:hover {
   width: 90%;
+  filter: none;
 }
 .living-matrix > * {
   grid-column: 1;

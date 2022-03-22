@@ -28,7 +28,7 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: false,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -87,7 +87,9 @@ export default {
       // eslint-disable-next-line no-console
       console.log(to, from, savedPosition)
       if(to.name === 'living-matrix-slug' && from.name === 'living-matrix-slug') {
-        return false;
+        // eslint-disable-next-line no-console
+        console.log('IS SLUG PAGE')
+        return {}
       }
       if (savedPosition) {
         return savedPosition;
