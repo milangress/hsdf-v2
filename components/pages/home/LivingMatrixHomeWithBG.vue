@@ -38,11 +38,12 @@ export default {
   /*padding: 1rem;*/
 }
 .box {
-  background-color: rgba(204, 204, 204, 204.5);
+  background-color: rgb(128, 124, 124);
   border-radius: 2rem;
   mix-blend-mode: soft-light;
   backdrop-filter: blur(25px);
   position: relative;
+  box-shadow: inset 0 0 2rem 10px #fff, inset 0 0 2rem 10px #fff;
 }
 .box:nth-child(1) {
   background: linear-gradient(180deg, rgba(193,193,193,1) 0%, rgba(250,254,21,1) 35%, rgba(255,255,255,1) 81%);

@@ -296,5 +296,6 @@ section.matrix-top {
   /*mix-blend-mode: soft-light;*/
   backdrop-filter: blur(25px);
   position: relative;
+  box-shadow: inset 0 0 2rem 10px #fff, inset 0 0 2rem 10px #fff;
 }
 </style>
