@@ -61,7 +61,9 @@ a.nuxt-link-active {
 .matrix-overlay {
   height: 100vh;
   position: relative;
-  cursor: crosshair;
+  cursor: url('~assets/images/Pointer-Blau.png') 38 67, crosshair;
+  /*background-image: url(~assets/images/Pointer-Blau.png);*/
+  /*cursor: crosshair;*/
 }
 .matrix-button {
   /*margin: -3rem;*/
@@ -74,6 +76,7 @@ a.nuxt-link-active {
   color: white !important;
   text-shadow: 0px 0px 15px blue;
   filter: url(#displacementFilter);
+  cursor: url('~assets/images/Pointer-schwarz.png') 63 67, crosshair;
 }
 .matrix-button:hover {
   filter: url(#displacementFilter) blur(2px);
