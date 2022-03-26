@@ -9,7 +9,7 @@
         .wrapper(:style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
           div.position {{marker.pos.x}}/{{marker.pos.y}}
           NuxtLink.matrix-button(:to="{path: `/living-matrix/${marker.slug}`}")
-            BlurBoxClean(bg-color="rgb(0,255,0)") {{marker.title}}
+            BlurBoxClean(bg-color="red") {{marker.title}}
 
 </template>
 
@@ -76,20 +76,23 @@ a.nuxt-link-active {
   /*contain: paint;*/
   /*position: absolute;*/
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 3rem;
   line-height: 1;
-  color: red !important;
+  color: white !important;
   text-shadow: 0px 0px 15px blue;
   filter: var(--grain);
   cursor: url('~assets/images/Pointer-schwarz.png') 63 67, crosshair;
-  /*font-family: "SissiDisplay", sans-serif;*/
+  font-family: "oracle_gmregular_mono", sans-serif;
   /*width: fit-content;*/
+  mix-blend-mode: hard-light;
 }
 .matrix-button:hover {
   filter: url(#displacementFilter) blur(2px);
 }
 .position {
   font-size: 0.8em;
+  font-family: "oracle_gmregular_mono", sans-serif;
+
   /*font-family: "SissiDisplay", sans-serif;*/
   /*transform: translateX(-50%);*/
   /*color: red;*/

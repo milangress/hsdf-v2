@@ -35,7 +35,7 @@ export default {
   background: var(--bg-color);
   z-index: -1;
   pointer-events: none;
-  filter: blur(15px) !important;
+  filter: blur(15px) saturate(2) !important;
 }
 .blur-background {
   z-index: -1;
