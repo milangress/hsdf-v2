@@ -1,5 +1,5 @@
 <template lang="pug">
-  .blur-wrapper
+  .blur-wrapper(:style="`--bg-color:${bgColor}`")
     slot
     //.blur-background(:style="`background-color:${bgColor}`")
     //.blur-content
@@ -24,6 +24,7 @@ export default {
   /*margin: -3rem;*/
   /*padding: 3rem;*/
   overflow: visible;
+  --bg-color: white;
 }
 
 .blur-wrapper:before {
@@ -31,7 +32,7 @@ export default {
   position: absolute;
   inset: -0.5em;
   border-radius: 1em;
-  background: #fff;
+  background: var(--bg-color);
   z-index: -1;
   pointer-events: none;
   filter: blur(15px) !important;
