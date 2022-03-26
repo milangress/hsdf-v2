@@ -41,7 +41,7 @@ export default {
   background-color: rgb(128, 124, 124);
   border-radius: 2rem;
   mix-blend-mode: soft-light;
-  /*backdrop-filter: blur(25px);*/
+  backdrop-filter: blur(5px);
   position: relative;
   box-shadow: inset 0 0 2rem 10px #fff, inset 0 0 2rem 10px #fff;
   opacity: 1;
