@@ -88,7 +88,8 @@ a.nuxt-link-active {
   z-index: 1;
 }
 .matrix-button:hover {
-  filter: url(#displacementFilter) hue-rotate(100deg);
+  filter: url(#displacementFilter) grayscale(1);
+/*hue-rotate(100deg)*/
   z-index: 100000 !important;
 }
 .position {

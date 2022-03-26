@@ -20,7 +20,7 @@
         //    option() {{category}}
         .category-selector-wrapper
           template(v-for="category in everyCategory")
-            BlurBox()
+            BlurBoxClean()
               span.category-selector(
                 @click="selectedFilter = category"
                 :class="{ActiveCategory: selectedFilter === category}"
@@ -64,7 +64,7 @@
 
 <script>
 import LivingMatrix from "~/components/LivingMatrix"
-import BlurBox from "~/components/BlurBox"
+import BlurBoxClean from "~/components/BlurBox"
 import HeadlineBox from "~/components/HeadlineBox"
 import MarkdownSanitizer from "~/components/MarkdownSanitizer"
 
@@ -73,7 +73,7 @@ export default {
   components: {
     MarkdownSanitizer,
     HeadlineBox,
-    BlurBox,
+    BlurBoxClean,
     LivingMatrix,
     BackgroundHydra: () => import('~/components/hydra/BackgroundHydra')
   },
@@ -155,7 +155,7 @@ export default {
 
         window.scrollTo(0, top);
         //   window.scrollTo({ top, behavior: "smooth" });
-        }, 100)
+        }, 150)
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e)
@@ -167,7 +167,8 @@ export default {
 
 <style scoped>
 .living-matrix-page {
-  background: #3366ff;
+  /*background: #3366ff;*/
+  background: black;
   color: white;
   min-height: 100vh;
 }
