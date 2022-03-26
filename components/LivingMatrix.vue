@@ -6,8 +6,10 @@
       //NuxtLink.matrix-button(to="living-matrix" style="left: 5%; top: 5%")
       //  BlurBox() Living Matrix <br> Environment
       template(v-for="marker in markers")
-        NuxtLink.matrix-button(:to="{path: `/living-matrix/${marker.slug}`}" :style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
-          BlurBoxClean(bg-color="white") {{marker.title}}
+        .wrapper(:style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
+          div.position {{marker.pos.x}}/{{marker.pos.y}}
+          NuxtLink.matrix-button(:to="{path: `/living-matrix/${marker.slug}`}")
+            BlurBoxClean(bg-color="blue") {{marker.title}}
 
 </template>
 
@@ -61,22 +63,43 @@ a.nuxt-link-active {
 .matrix-overlay {
   height: 100vh;
   position: relative;
-  cursor: crosshair;
+  cursor: url('~assets/images/Pointer-Blau.png') 38 67, crosshair;
+  /*background-image: url(~assets/images/Pointer-Blau.png);*/
+  /*cursor: crosshair;*/
+}
+.wrapper {
+  position: absolute;
 }
 .matrix-button {
   /*margin: -3rem;*/
   /*padding: 3rem;*/
   /*contain: paint;*/
-  position: absolute;
+  /*position: absolute;*/
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 3rem;
   line-height: 1;
   color: white !important;
   text-shadow: 0px 0px 15px blue;
-  filter: url(#displacementFilter);
+  filter: var(--grain);
+  cursor: url('~assets/images/Pointer-schwarz.png') 63 67, crosshair;
+  font-family: "oracle_gmregular_mono", sans-serif;
+  /*width: fit-content;*/
+  mix-blend-mode: hard-light;
+  z-index: 1;
 }
 .matrix-button:hover {
-  filter: url(#displacementFilter) blur(2px);
+  filter: url(#displacementFilter) grayscale(1);
+/*hue-rotate(100deg)*/
+  z-index: 100000 !important;
+}
+.position {
+  font-size: 0.8em;
+  font-family: "oracle_gmregular_mono", sans-serif;
+  z-index: 5;
+
+  /*font-family: "SissiDisplay", sans-serif;*/
+  /*transform: translateX(-50%);*/
+  /*color: red;*/
 }
 
 </style>

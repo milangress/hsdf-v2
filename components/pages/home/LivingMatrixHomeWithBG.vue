@@ -5,7 +5,7 @@
       .box
       .box
       .box
-    MatrixSVG2d(:padding="20")
+    //MatrixSVG2d(:padding="20")
     LivingMatrix
 
 </template>
@@ -38,37 +38,39 @@ export default {
   /*padding: 1rem;*/
 }
 .box {
-  background-color: rgba(204, 204, 204, 204.5);
+  background-color: rgb(128, 124, 124);
   border-radius: 2rem;
   mix-blend-mode: soft-light;
-  backdrop-filter: blur(25px);
+  backdrop-filter: blur(5px);
   position: relative;
+  box-shadow: inset 0 0 2rem 10px #fff, inset 0 0 2rem 10px #fff;
+  opacity: 1;
 }
-.box:nth-child(1) {
-  background: linear-gradient(180deg, rgba(193,193,193,1) 0%, rgba(250,254,21,1) 35%, rgba(255,255,255,1) 81%);
+/*.box:nth-child(1) {*/
+/*  background: linear-gradient(180deg, rgba(193,193,193,1) 0%, rgba(250,254,21,1) 35%, rgba(255,255,255,1) 81%);*/
 
-}
-.box:nth-child(2) {
-  background: linear-gradient(180deg, rgba(0,7,255,1) 0%, rgba(255,181,0,1) 35%, rgba(255,255,255,1) 81%);
+/*}*/
+/*.box:nth-child(2) {*/
+/*  background: linear-gradient(180deg, rgba(0,7,255,1) 0%, rgba(255,181,0,1) 35%, rgba(255,255,255,1) 81%);*/
 
-}
-.box:nth-child(1):after, .box:nth-child(1):before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 2rem;
-  background: linear-gradient(180deg, rgba(214,214,214,1) 0%, rgba(255,246,0,1) 46%, rgba(255,255,255,1) 100%);
-  mix-blend-mode: color-burn;
+/*}*/
+/*.box:nth-child(1):after, .box:nth-child(1):before {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  inset: 0;*/
+/*  border-radius: 2rem;*/
+/*  background: linear-gradient(180deg, rgba(214,214,214,1) 0%, rgba(255,246,0,1) 46%, rgba(255,255,255,1) 100%);*/
+/*  mix-blend-mode: color-burn;*/
 
-}
-.box:nth-child(2):after, .box:nth-child(2):before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 2rem;
-  background: linear-gradient(180deg, rgba(0,7,255,1) 0%, rgba(255,169,0,1) 46%, rgba(255,255,255,1) 100%);
-  mix-blend-mode: multiply;
+/*}*/
+/*.box:nth-child(2):after, .box:nth-child(2):before {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  inset: 0;*/
+/*  border-radius: 2rem;*/
+/*  background: linear-gradient(180deg, rgba(0,7,255,1) 0%, rgba(255,169,0,1) 46%, rgba(255,255,255,1) 100%);*/
+/*  mix-blend-mode: multiply;*/
 
-}
+/*}*/
 
 </style>

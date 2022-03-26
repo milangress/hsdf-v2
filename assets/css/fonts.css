@@ -32,6 +32,14 @@
   src: url('~assets/css/fonts/SissiDisplay-Regular.woff') format('woff');
   font-weight: normal
 }
+@font-face {
+  font-family: 'oracle_gmregular_mono';
+  src: url('~assets/css/fonts/oraclegm-regularmono-webfont-webfont.woff2') format('woff2'),
+  url('~assets/css/fonts/oraclegm-regularmono-webfont-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
 
 html {
   font-family: "authentic", sans-serif;

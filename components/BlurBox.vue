@@ -23,6 +23,7 @@ export default {
   margin: -3rem;
   padding: 3rem;
   overflow: visible;
+  filter: var(--grain);
 }
 .blur-wrapper > * {
   grid-column: 1;

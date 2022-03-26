@@ -20,7 +20,7 @@
         //    option() {{category}}
         .category-selector-wrapper
           template(v-for="category in everyCategory")
-            BlurBox()
+            BlurBoxClean()
               span.category-selector(
                 @click="selectedFilter = category"
                 :class="{ActiveCategory: selectedFilter === category}"
@@ -64,7 +64,7 @@
 
 <script>
 import LivingMatrix from "~/components/LivingMatrix"
-import BlurBox from "~/components/BlurBox"
+import BlurBoxClean from "~/components/BlurBox"
 import HeadlineBox from "~/components/HeadlineBox"
 import MarkdownSanitizer from "~/components/MarkdownSanitizer"
 
@@ -73,7 +73,7 @@ export default {
   components: {
     MarkdownSanitizer,
     HeadlineBox,
-    BlurBox,
+    BlurBoxClean,
     LivingMatrix,
     BackgroundHydra: () => import('~/components/hydra/BackgroundHydra')
   },
@@ -155,7 +155,7 @@ export default {
 
         window.scrollTo(0, top);
         //   window.scrollTo({ top, behavior: "smooth" });
-        }, 100)
+        }, 150)
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e)
@@ -167,7 +167,8 @@ export default {
 
 <style scoped>
 .living-matrix-page {
-  background: #3366ff;
+  /*background: #3366ff;*/
+  background: black;
   color: white;
   min-height: 100vh;
 }
@@ -287,14 +288,16 @@ section.matrix-top {
   /*padding: 1rem;*/
 }
 .box {
-  background: linear-gradient(0deg,
-  rgba(204,204,204,1) 20%,
-  rgba(255,204,0,1) 30%,
-  rgba(255,204,0,1) 70%,
-  rgba(204,204,204,1) 80%);
+  /*background: linear-gradient(0deg,*/
+  /*rgba(204,204,204,1) 20%,*/
+  /*rgba(255,204,0,1) 30%,*/
+  /*rgba(255,204,0,1) 70%,*/
+  /*rgba(204,204,204,1) 80%);*/
+  background: lightgray;
   border-radius: 2rem;
   /*mix-blend-mode: soft-light;*/
   backdrop-filter: blur(25px);
   position: relative;
+  box-shadow: inset 0 0 2rem 10px #fff, inset 0 0 2rem 10px #fff;
 }
 </style>

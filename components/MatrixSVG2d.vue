@@ -53,8 +53,8 @@ export default {
 
 <style scoped>
 .line {
-  stroke-width: 2;
-  stroke: #ff0000;
+  stroke-width: 1;
+  stroke: #fff;
 }
 
 </style>
