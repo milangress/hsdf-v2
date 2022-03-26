@@ -48,6 +48,10 @@ export default {
   filter: blur(0px) var(--grain);
   transition: 0.3s filter linear;
 }
+.headline-box a {
+  color: white;
+  text-decoration: none;
+}
 .headline-box:hover {
   filter: blur(1px) var(--grainTest) !important;
 }
