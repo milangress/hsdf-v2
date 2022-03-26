@@ -5,15 +5,15 @@
     //  h1 Highly <br> Speculative <br> Design <br> Fiction
     //MatrixSVG2d
     img.big-logo(src="/HSDF-Logo-2022.png")
-    HeaderFloatingTitles
+    //HeaderFloatingTitles
 </template>
 
 <script>
 import FloatTitle from "~/components/pages/home/FloatTitle"
-import HeaderFloatingTitles from "~/components/pages/home/HeaderFloatingTitles"
+// import HeaderFloatingTitles from "~/components/pages/home/HeaderFloatingTitles"
 export default {
   name: "HeaderHome",
-  components: {HeaderFloatingTitles, FloatTitle}
+  components: {FloatTitle}
 }
 </script>
 
