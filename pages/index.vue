@@ -5,7 +5,7 @@
     HeaderHome
     nav
       NuxtLink(to="about")
-        BlurBox(bg-color="#fef264") About
+        BlurBox(bg-color="white") About
     .content
       HeadlineBox
         NuxtLink(:to="{path: `/living-matrix`}") Living Matrix
