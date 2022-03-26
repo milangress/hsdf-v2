@@ -9,7 +9,7 @@
         .wrapper(:style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
           div.position {{marker.pos.x}}/{{marker.pos.y}}
           NuxtLink.matrix-button(:to="{path: `/living-matrix/${marker.slug}`}")
-            BlurBoxClean(bg-color="red") {{marker.title}}
+            BlurBoxClean(bg-color="blue") {{marker.title}}
 
 </template>
 
@@ -85,13 +85,16 @@ a.nuxt-link-active {
   font-family: "oracle_gmregular_mono", sans-serif;
   /*width: fit-content;*/
   mix-blend-mode: hard-light;
+  z-index: 1;
 }
 .matrix-button:hover {
-  filter: url(#displacementFilter) blur(2px);
+  filter: url(#displacementFilter) hue-rotate(100deg);
+  z-index: 100000 !important;
 }
 .position {
   font-size: 0.8em;
   font-family: "oracle_gmregular_mono", sans-serif;
+  z-index: 5;
 
   /*font-family: "SissiDisplay", sans-serif;*/
   /*transform: translateX(-50%);*/
