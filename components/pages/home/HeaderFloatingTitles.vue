@@ -5,13 +5,13 @@ svg(:width="width" :height="height" :viewBox="`0 0 ${width} ${height}`")
 
   filter#filter(x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB")
     feTurbulence(type="turbulence" baseFrequency="0.15 0.15" numOctaves="1" seed="2" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence")
-    feDisplacementMap(in="SourceGraphic" in2="turbulence" scale="20" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap1")
+    feDisplacementMap(in="SourceGraphic" in2="turbulence" scale="15" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap1")
   //filter(id="HeaderFloatingTitlesDisplacement" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB")
   //  feTurbulence(type="turbulence" baseFrequency="0.1 0.1" numOctaves="2" seed="2" stitchTiles="stitch")
   //  feDisplacementMap(in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" )
   //animate(xlink:href="#disp" id="anim-scale" attributeName="scale" from="140" to="0" dur="3s" fill="freeze" repeatCount="indefinite")
   g(filter="url(#shadow)")
-    text.main-text(:x="width/2" :y="height/2" filter="url(#filter)") feeling dizzy?
+    text.main-text(text-anchor="middle" :x="width/2" :y="height/2" filter="url(#filter)") feeling dizzy?
 </template>
 
 <script>
@@ -21,6 +21,19 @@ export default {
     return {
       width: 1000,
       height: 1000
+    }
+  },
+  mounted() {
+    this.getSize()
+    window.addEventListener('resize', this.getSize);
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.getSize);
+  },
+  methods: {
+    getSize() {
+      this.width = window.innerWidth
+      this.height = window.innerHeight
     }
   }
 }
