@@ -64,7 +64,7 @@
 
 <script>
 import LivingMatrix from "~/components/LivingMatrix"
-import BlurBoxClean from "~/components/BlurBox"
+import BlurBoxClean from "~/components/BlurBoxClean"
 import HeadlineBox from "~/components/HeadlineBox"
 import MarkdownSanitizer from "~/components/MarkdownSanitizer"
 
