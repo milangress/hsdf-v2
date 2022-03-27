@@ -70,6 +70,9 @@ a.nuxt-link-active {
 .wrapper {
   position: absolute;
 }
+.wrapper:hover {
+  z-index: 1000;
+}
 .matrix-button {
   /*margin: -3rem;*/
   /*padding: 3rem;*/
@@ -88,9 +91,8 @@ a.nuxt-link-active {
   z-index: 1;
 }
 .matrix-button:hover {
-  filter: url(#displacementFilter) grayscale(1);
+  filter: var(--grain) grayscale(1);
 /*hue-rotate(100deg)*/
-  z-index: 100000 !important;
 }
 .position {
   font-size: 0.8em;

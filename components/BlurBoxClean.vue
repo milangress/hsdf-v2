@@ -25,6 +25,7 @@ export default {
   /*padding: 3rem;*/
   overflow: visible;
   --bg-color: white;
+  position: relative;
 }
 
 .blur-wrapper:before {
