@@ -50,7 +50,7 @@ nav {
   left: 2rem;
   font-size: 3rem;
   transform: scaleX(0.8);
-  filter: url(#displacementFilter);
+  filter: var(--grain);
 }
 nav a {
   color: #3372ed;

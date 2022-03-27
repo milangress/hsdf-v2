@@ -5,10 +5,11 @@
       BackgroundHydra
     nav
       NuxtLink(to="/")
-        BlurBox(bg-color="#ffffff") 🢨 back
+        BlurBoxClean(bg-color="#ffffff") 🢨 back
     section.matrix-top(:style="styleLeft")
-      h1 Work
-      p The living matrix is our ongoing research archive
+      .intro-text
+        //h1 Living Matrix
+        p The living matrix is our ongoing research archive. Compiling past, contemporary and future artifacts in 2D-space. You can submit new content by clicking somewhere on the matrix and filling out the form.
 
       p(v-if="$fetchState.pending") Loading....
       p(v-else-if="$fetchState.error") Error while fetching data
@@ -171,9 +172,16 @@ export default {
   background: black;
   color: white;
   min-height: 100vh;
+  /*font-family: "oracle_gmregular_mono", sans-serif;*/
 }
 nav {
   z-index: 5;
+  mix-blend-mode: difference;
+}
+nav:hover {
+  /*filter: saturate(40000);*/
+  filter: invert(2);
+  mix-blend-mode: difference;
 }
 a {
   color: unset;
@@ -198,11 +206,16 @@ a {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+.intro-text {
+  font-size: 1em;
+  color: gray;
+  mix-blend-mode: difference;
+}
 .category-selector-wrapper {
-  margin-top: 1rem;
+  margin-block: 2rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8em;
+  gap: 1em;
 }
 .category-selector {
   font-size: 1em;
@@ -255,7 +268,7 @@ a {
 }
 section.matrix-top {
   /*font-size: 2em;*/
-  padding: 50vh 1rem 1rem 1rem;
+  padding: 20vh 1rem 1rem 1rem;
   max-width: 50vw;
   transform-origin: left;
   transition: all ease-in-out 0.2s;
