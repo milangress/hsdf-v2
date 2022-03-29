@@ -6,14 +6,16 @@
     //MatrixSVG2d
     img.big-logo(src="/HSDF-Logo-2022.png")
     //HeaderFloatingTitles
+    Home3DModel
 </template>
 
 <script>
 import FloatTitle from "~/components/pages/home/FloatTitle"
+import Home3DModel from "~/components/pages/home/Home3DModel"
 // import HeaderFloatingTitles from "~/components/pages/home/HeaderFloatingTitles"
 export default {
   name: "HeaderHome",
-  components: {FloatTitle}
+  components: {Home3DModel, FloatTitle}
 }
 </script>
 

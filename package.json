@@ -22,7 +22,8 @@
     "marked": "^4.0.10",
     "motion": "^10.7.0",
     "nuxt": "^2.15.7",
-    "postcss-easing-gradients": "^3.0.1"
+    "postcss-easing-gradients": "^3.0.1",
+    "vue-3d-model": "^1.4.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
