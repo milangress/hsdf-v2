@@ -43,7 +43,9 @@ AFRAME.registerComponent('rotation-reader', {
     // eslint-disable-next-line no-console
     // console.log(this.el.object3D.position);
     // const rotation = this.el.getObject3D('camera').rotation
-    const position = this.el.getObject3D('camera').position
+    const vec3 = new THREE.Vector3()
+    // eslint-disable-next-line no-unused-vars
+    const position = this.el.getObject3D('camera').getWorldPosition(vec3)
     // eslint-disable-next-line no-console
     // console.log(position)
     // this.target.setAttribute('rotation', {
@@ -57,7 +59,7 @@ AFRAME.registerComponent('rotation-reader', {
     //   0
     // );
     // this.vector.subVectors(this.target.object3D.position, position).add(this.target.object3D.position);
-    this.target.object3D.lookAt(position)
+    this.target.object3D.lookAt(vec3)
 
     // this.target.rotation = this.el.getObject3D('camera').rotation
 
