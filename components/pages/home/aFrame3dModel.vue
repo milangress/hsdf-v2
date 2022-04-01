@@ -44,6 +44,7 @@ export default {
 <style scoped>
 .aframe-wrapper {
   min-height: 100vh;
+  /*filter: var(--grain-min);*/
 }
 
 </style>
