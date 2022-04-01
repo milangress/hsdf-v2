@@ -47,5 +47,9 @@ export default {
   min-height: 100vh;
   /*filter: var(--grain-min);*/
 }
+.a-loader-title {
+  display: none;
+  opacity: 0;
+}
 
 </style>
