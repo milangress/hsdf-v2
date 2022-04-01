@@ -36,7 +36,7 @@ AFRAME.registerComponent('rotation-reader', {
 
     // `rotation` is a three.js Euler using radians. `quaternion` also available.
     // eslint-disable-next-line no-console
-    console.log(this.target.object3D.rotation);
+    // console.log(this.target.object3D.rotation);
     // const vector = this.vector
 
     // `position` is a three.js Vector3.
@@ -45,7 +45,7 @@ AFRAME.registerComponent('rotation-reader', {
     // const rotation = this.el.getObject3D('camera').rotation
     const position = this.el.getObject3D('camera').position
     // eslint-disable-next-line no-console
-    console.log(position)
+    // console.log(position)
     // this.target.setAttribute('rotation', {
     //   x: rotation._x * 100,
     //   y: rotation._y * 100,
@@ -56,7 +56,7 @@ AFRAME.registerComponent('rotation-reader', {
     //   rotation.y,
     //   0
     // );
-    // vector.subVectors(this.target.object3D.position, position).add(this.target.object3D.position);
+    // this.vector.subVectors(this.target.object3D.position, position).add(this.target.object3D.position);
     this.target.object3D.lookAt(position)
 
     // this.target.rotation = this.el.getObject3D('camera').rotation
