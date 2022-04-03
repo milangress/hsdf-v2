@@ -10,7 +10,7 @@
     a-entity(animation="property: rotation; to: 0 -360 0; loop: true; dur: 50000; easing: linear")
       a-entity(gltf-model="url(/3dmodel.glb)" position="1 0 0" animation-mixer modify-materials animation="property: rotation; to: 0 360 0; loop: true; dur: 50000")
       a-entity(gltf-model="url(/3dmodel-2.glb)" position="-4.5 -1 0" animation-mixer modify-materials animation="property: rotation; to: 0 -360 0; loop: true; dur: 40000")
-    a-entity#camera(camera="fov: 30" look-controls="touchEnabled: false" rotation-reader orbit-controls="enableZoom: false; target: 0 0 0; minDistance: 0.5; maxDistance: 80; initialPosition: 0 1 10; minPolarAngle: 0; maxPolarAngle: 180; autoRotate: true; autoRotateSpeed: 0.05;")
+    a-entity#camera(camera="fov: 30" rotation-reader orbit-controls="enableZoom: false; target: 0 0 0; minDistance: 0.5; maxDistance: 80; initialPosition: 0 1 10; minPolarAngle: 0; maxPolarAngle: 180; autoRotate: true; autoRotateSpeed: 0.05; enablePan: false;")
 
     a-entity#logo(scale="5 5 0")
       a-plane(position="0 0 0" material="shader: flat; src: #logoImage; transparent: true; side: front; depthTest: true")
