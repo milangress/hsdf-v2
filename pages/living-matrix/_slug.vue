@@ -282,7 +282,7 @@ section.matrix-top {
   right: 0;
   transition: all ease-in-out 0.2s;
   mix-blend-mode: difference;
-  filter: blur(1px)
+  /*filter: blur(1px)*/
 }
 .living-matrix:hover {
   width: 90%;
