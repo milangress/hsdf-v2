@@ -26,6 +26,7 @@ AFRAME.registerComponent('rotation-reader', {
   init () {
     this.target = null
     this.vector = new THREE.Vector3();
+    // this.tick = AFRAME.utils.throttleTick(this.tick, 50, this);
   },
   update () {
     this.target = this.el.sceneEl.querySelector('#logo');

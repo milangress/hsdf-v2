@@ -67,7 +67,7 @@ nav {
   left: 2rem;
   font-size: 3rem;
   transform: scaleX(0.8);
-  filter: url("http://localhost:3000/about#globalDisplacementFilter");
+  filter: var(--grain);
 }
 nav a {
   color: #3372ed;
@@ -156,9 +156,10 @@ nav:hover {
   color: red;
   font-size: 1.5rem;
   line-height: 1.2;
-  filter: url(#globalDisplacementFilter);
+  filter: var(--grain);
   /*text-shadow: 0 0 5px #FFFFFF, 0 0 15px #FFFFFF, 0 0 25px #FFFFFF, 0 0 35px #FFFFFF, 0 0 45px #FFFFFF, 0 0 55px #FFFFFF, 0 0 65px #FFFFFF, 0 0 75px #FFFFFF, 0 0 85px #FFFFFF, 0 0 95px #FFFFFF, 0 0 105px #FFFFFF, 0 0 115px #FFFFFF, 0 0 125px #FFFFFF, 0 0 135px #FFFFFF;*/
   text-transform: uppercase;
+  text-shadow: 1px 1px 0 #FFFFFF, -1px -1px 0 #FFFFFF, 0 0 15px #FFFFFF;
 
 }
 .about-us-wrapper p {

@@ -22,6 +22,7 @@ export default {
 <style scoped>
 .project-links {
   height: 50vh;
+  min-height: 50em;
   /*margin-top: -4rem;*/
   margin-top: 1rem;
 
@@ -65,9 +66,25 @@ export default {
 
 @media (max-width: 800px) {
   .project-links {
-    height: 100vh;
+    height: auto;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+  }
+  .box {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2rem 1rem 0 1rem;
+    text-align: left;
+  }
+  .button-bottom {
+    position: relative;
+    bottom: 2rem;
+  }
+  .box:nth-child(1) {
+    background: linear-gradient(180deg, rgba(0,255,1,1) 0%, rgba(209,209,209,1) 30%, rgba(209,209,209,1) 50%, rgba(255,255,255,1) 100%)
+  }
+  .box:nth-child(2) {
+    background: linear-gradient(180deg, rgba(252,11,11,1) 0%, rgba(209,209,209,1) 30%, rgba(209,209,209,1) 50%, rgba(255,255,255,1) 100%)
   }
 }
 

@@ -26,6 +26,11 @@ body {
   /*filter: var(--grain);*/
 }
 
+.a-loader-title {
+  display: none !important;
+  opacity: 0 !important;
+}
+
 /*
 <animate xlink:href="#filter" id="anim-dialiate" attributeName="scale" from="0" to="20" dur="3s" fill="freeze" /> \
 */
