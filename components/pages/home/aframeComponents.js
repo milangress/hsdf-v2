@@ -26,7 +26,7 @@ AFRAME.registerComponent('rotation-reader', {
   init () {
     this.target = null
     this.vector = new THREE.Vector3();
-    // this.tick = AFRAME.utils.throttleTick(this.tick, 50, this);
+    this.tick = AFRAME.utils.throttleTick(this.tick, 5, this);
   },
   update () {
     this.target = this.el.sceneEl.querySelector('#logo');
@@ -44,9 +44,8 @@ AFRAME.registerComponent('rotation-reader', {
     // eslint-disable-next-line no-console
     // console.log(this.el.object3D.position);
     // const rotation = this.el.getObject3D('camera').rotation
-    const vec3 = new THREE.Vector3()
     // eslint-disable-next-line no-unused-vars
-    const position = this.el.getObject3D('camera').getWorldPosition(vec3)
+    this.el.getObject3D('camera').getWorldPosition(this.vector)
     // eslint-disable-next-line no-console
     // console.log(position)
     // this.target.setAttribute('rotation', {
@@ -60,7 +59,7 @@ AFRAME.registerComponent('rotation-reader', {
     //   0
     // );
     // this.vector.subVectors(this.target.object3D.position, position).add(this.target.object3D.position);
-    this.target.object3D.lookAt(vec3)
+    this.target.object3D.lookAt(this.vector)
 
     // this.target.rotation = this.el.getObject3D('camera').rotation
 
