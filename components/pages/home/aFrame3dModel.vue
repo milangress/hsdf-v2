@@ -5,11 +5,11 @@
       loading-screen="enabled: false"
       background="transparent: true")
     a-assets
-      a-asset-item(id="cityModel" src="/3dmodel.glb")
+      //a-asset-item(id="cityModel" src="/3dmodel.glb")
       img(id="logoImage" src="/HSDF-Logo-2022.png")
     a-entity(animation="property: rotation; to: 0 -360 0; loop: true; dur: 50000; easing: linear")
-      a-entity(gltf-model="url(/3dmodel.glb)" position="1 0 0" animation-mixer modify-materials animation="property: rotation; to: 0 360 0; loop: true; dur: 50000")
-      a-entity(gltf-model="url(/3dmodel-2.glb)" position="-4.5 -1 0" animation-mixer modify-materials animation="property: rotation; to: 0 -360 0; loop: true; dur: 40000")
+      a-entity(gltf-model="url(/3dmodel-optim.glb)" position="1 0 0" animation-mixer modify-materials animation="property: rotation; to: 0 360 0; loop: true; dur: 50000")
+      a-entity(gltf-model="url(/3dmodel-2-optim.glb)" position="-4.5 -1 0" animation-mixer modify-materials animation="property: rotation; to: 0 -360 0; loop: true; dur: 40000")
     a-entity#camera(camera="fov: 30" rotation-reader orbit-controls="enableZoom: false; target: 0 0 0; minDistance: 0.5; maxDistance: 80; initialPosition: 0 1 10; minPolarAngle: 0; maxPolarAngle: 180; autoRotate: true; autoRotateSpeed: 0.05; enablePan: false;")
 
     a-entity#logo(scale="5 5 0")
@@ -32,7 +32,7 @@ if (process.browser) {
   require('aframe-extras')
   require('aframe-orbit-controls')
   require('./aframeComponents.js')
-  require('aframe-look-at-component')
+  // require('aframe-look-at-component')
 }
 
 export default {
@@ -46,6 +46,11 @@ export default {
 .aframe-wrapper {
   min-height: 100vh;
   /*filter: var(--grain-min);*/
+}
+@media (pointer: coarse) {
+  .aframe-wrapper {
+    pointer-events: none;
+  }
 }
 .a-loader-title {
   display: none;
