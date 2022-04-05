@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 .blurBox-button-wrapper {
-  filter: url(#displacementFilter);
+  filter: var(--grain);
   color: white;
   text-decoration: none;
 }
