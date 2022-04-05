@@ -2,7 +2,7 @@
 .aframe-wrapper
   a-scene(vr-mode-ui="enabled: false" embedded
     device-orientation-permission-ui="enabled: false"
-      loading-screen="dotsColor: black; backgroundColor: rgb(231,231,231)"
+      loading-screen="enabled: false"
       background="transparent: true")
     a-assets
       a-asset-item(id="cityModel" src="/3dmodel.glb")
