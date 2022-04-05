@@ -22,7 +22,6 @@ export default {
 <style scoped>
 .project-links {
   height: 50vh;
-  min-height: 50em;
   /*margin-top: -4rem;*/
   margin-top: 1rem;
 
