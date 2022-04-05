@@ -52,6 +52,11 @@ export default {
     pointer-events: none;
   }
 }
+@media (hover: none) {
+  .aframe-wrapper {
+    pointer-events: none;
+  }
+}
 .a-loader-title {
   display: none;
   opacity: 0;
