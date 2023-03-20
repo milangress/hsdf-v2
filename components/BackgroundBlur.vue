@@ -8,12 +8,12 @@ export default {
   data() {
     return {
       scrollTop: 0,
+      blurVal: 0,
     }
   },
   computed: {
     blurEffectCSS() {
-      const blurVal = Math.round(Math.min(Math.max(this.scrollTop / 100, 0), 5))
-      return `filter: blur(${blurVal}px);`
+      return `filter: blur(${this.blurVal}px);`
     }
   },
   mounted() {
@@ -24,7 +24,8 @@ export default {
   },
   methods: {
     handelScroll() {
-      this.scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      this.blurVal = Math.round(Math.min(Math.max(scrollTop / 100, 0), 5))
     }
   },
 }
@@ -40,6 +41,6 @@ export default {
   background-repeat: no-repeat;
   position: fixed;
   z-index: -100;
-  filter: blur(10px);
+  /*filter: blur(10px);*/
 }
 </style>
