@@ -1,6 +1,6 @@
 <template lang="pug">
   .index-container
-    BackgroundBlur
+    //BackgroundBlur
     StartOverlay
     HeaderHome
     nav

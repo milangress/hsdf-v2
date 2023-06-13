@@ -8,7 +8,7 @@
     //Home3DModel
     //img.big-logo(src="/HSDF-Logo-2022.png")
     client-only
-      a-frame3d-model
+      //a-frame3d-model
 </template>
 
 <script>
