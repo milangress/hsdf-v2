@@ -9,7 +9,8 @@
         .wrapper(:style="`left: ${marker.pos.x}%; top: ${marker.pos.y}%`")
           div.position {{marker.pos.x}}/{{marker.pos.y}}
           NuxtLink.matrix-button(:to="{path: `/living-matrix/${marker.slug}`}")
-            BlurBoxClean(bg-color="blue") {{marker.title}}
+            //BlurBoxClean(bg-color="blue")
+            | {{marker.title}}
 
 </template>
 
@@ -79,11 +80,11 @@ a.nuxt-link-active {
   /*contain: paint;*/
   /*position: absolute;*/
   display: inline-block;
-  font-size: 3rem;
+  font-size: 1.5rem;
   line-height: 1;
-  color: white !important;
-  text-shadow: 0px 0px 15px blue;
-  filter: var(--grain);
+  color: black !important;
+  /*text-shadow: 0px 0px 15px blue;*/
+  filter: var(--grain-min);
   cursor: url('~assets/images/Pointer-schwarz.png') 63 67, crosshair;
   font-family: "oracle_gmregular_mono", sans-serif;
   /*width: fit-content;*/
