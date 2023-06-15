@@ -11,12 +11,9 @@
 </template>
 
 <script>
-import FloatTitle from "~/components/pages/home/FloatTitle"
-import AFrame3dModel from "~/components/pages/home/aFrame3dModel"
-// import HeaderFloatingTitles from "~/components/pages/home/HeaderFloatingTitles"
 export default {
   name: "HeaderHome",
-  components: {AFrame3dModel, FloatTitle}
+  components: {}
 }
 </script>
 
