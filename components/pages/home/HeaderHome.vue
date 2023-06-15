@@ -5,7 +5,6 @@
     //  h1 Highly <br> Speculative <br> Design <br> Fiction
     //MatrixSVG2d
     //HeaderFloatingTitles
-    //Home3DModel
     //img.big-logo(src="/HSDF-Logo-2022.png")
     client-only
       //a-frame3d-model
@@ -13,12 +12,11 @@
 
 <script>
 import FloatTitle from "~/components/pages/home/FloatTitle"
-import Home3DModel from "~/components/pages/home/Home3DModel"
 import AFrame3dModel from "~/components/pages/home/aFrame3dModel"
 // import HeaderFloatingTitles from "~/components/pages/home/HeaderFloatingTitles"
 export default {
   name: "HeaderHome",
-  components: {AFrame3dModel, Home3DModel, FloatTitle}
+  components: {AFrame3dModel, FloatTitle}
 }
 </script>
 
