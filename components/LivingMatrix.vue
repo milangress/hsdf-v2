@@ -86,10 +86,11 @@ a.nuxt-link-active {
   /*text-shadow: 0px 0px 15px blue;*/
   filter: var(--grain-min);
   cursor: url('~assets/images/Pointer-schwarz.png') 63 67, crosshair;
-  font-family: "oracle_gmregular_mono", sans-serif;
+  font-family: "Garamondt", sans-serif;
   /*width: fit-content;*/
   mix-blend-mode: hard-light;
   z-index: 1;
+
 }
 .matrix-button:hover {
   filter: var(--grain) grayscale(1);
@@ -97,8 +98,9 @@ a.nuxt-link-active {
 }
 .position {
   font-size: 0.8em;
-  font-family: "oracle_gmregular_mono", sans-serif;
+  font-family: "Garamondt", sans-serif;
   z-index: 5;
+  font-style: italic;
 
   /*font-family: "SissiDisplay", sans-serif;*/
   /*transform: translateX(-50%);*/

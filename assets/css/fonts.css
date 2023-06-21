@@ -40,8 +40,20 @@
   font-style: normal;
 
 }
+@font-face {
+  font-family: 'Garamondt';
+  src: url('~assets/css/fonts/Garamondt-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Garamondt';
+  src: url('~assets/css/fonts/Garamondt-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
 
 html {
-  font-family: "authentic", sans-serif;
+  font-family: "Garamondt", sans-serif;
   /*font-family: "authentic", sans-serif;*/
 }
