@@ -3,8 +3,7 @@
     p.text <i>Unreal Entrprises</i> is the collaborative design & artist duo <i>Anna Janke</i> and <i>Milan Gress</i>. They are interested in the opaque connections between fiction, capitalist alienation, bodies and instant*impulse*gambling*dopamine magic. UE practice manifests through methods, tools, workshops and physical fictions. <i>Always keep your optimism/pessimism. <br> With love, Anna & Milan</i>
 
     .navigation
-      a.icon(v-for="menuItem in menuItems" :key="menuItem.name" :href="menuItem.link")
-        img.shimmer(:src="menuItem.icon")
+      HeaderIconMenuIcon(v-for="menuItem in menuItems" :key="menuItem.name" :menuItem="menuItem")
 </template>
 
 <script>
@@ -16,12 +15,12 @@ export default {
         {
           name: "Matrix",
           icon: "/icons/Matrix_Tool_1.png",
-          link: "/matrix",
+          link: "https://matrix.unreal.enterprises",
         },
         {
           name: "Unreal Engine",
           icon: "/icons/Unreal_Engine_Icon.png",
-          link: "/tools",
+          link: "/unreal-engine",
         },
         {
           name: "Living Matrix",
@@ -31,12 +30,12 @@ export default {
         {
           name: "Future as a Service",
           icon: "/icons/FAAS.png",
-          link: "/faas",
+          link: "https://faas.unreal.enterprises",
         },
         {
           name: "Highly Speculative Design Fiction",
           icon: "/icons/HSDF-Logo-2022.png",
-          link: "/hsdf",
+          link: "/highly-speculative-design-fiction",
         },
         {
           name: "Workshops",
@@ -62,27 +61,31 @@ export default {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 5rem;
+  /*grid-gap: 5rem;*/
   padding: 0 5rem;
 }
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 0.5s;
+@media (max-width: 800px) {
+  .navigation {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
+    grid-gap: 1rem;
+  }
 }
-.icon:nth-child(4n - 3), .icon:nth-child(3n) {
+@media (max-width: 600px) {
+  .navigation {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+  }
+}
+</style>
+
+<style>
+.navigation > *:nth-child(3n - 2), .navigation > *:nth-child(3n) {
   transform: translateY(-5rem);
 }
-
-.shimmer {
-  -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
-  background-repeat: no-repeat;
-  animation: shimmer 2.5s infinite;
-}
-
-@keyframes shimmer {
-  100% {-webkit-mask-position:left}
+@media (max-width: 800px) {
+  .navigation > *:nth-child(3n - 2), .navigation > *:nth-child(3n) {
+    transform: none
+  }
 }
 </style>
