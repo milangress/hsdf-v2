@@ -3,9 +3,9 @@
     //BackgroundBlur
     //StartOverlay
     //HeaderHome
-    nav
-      NuxtLink(to="about")
-        BlurBox(bg-color="white") About
+    //nav
+    //  NuxtLink(to="about")
+    //    BlurBox(bg-color="white") About
     HeaderIconMenu
     .content
       HeadlineBox
