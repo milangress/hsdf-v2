@@ -107,12 +107,12 @@ nav:hover {
 }
 .text {
   padding: 1rem 1rem 5rem 1rem;
-  font-size: 1.5rem;
-  color: rgb(255, 255, 255);
-  text-shadow: 0px 6px 6px rgb(0, 0, 255), 0px 3px 3px rgb(0, 0, 255);
-  filter: url(#globalDisplacementFilter);
-  line-height: 1.2;
-  text-transform: uppercase;
+  font-size: 1.75rem;
+  color: rgb(0, 0, 0);
+  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.2), 0px 1px 1px rgb(255, 255, 255, 0.2);
+  /*filter: url(#globalDisplacementFilter);*/
+  line-height: 1.3;
+  /*text-transform: uppercase;*/
 }
 .text-right {
   grid-column: 3;
@@ -128,7 +128,7 @@ nav:hover {
   color: red;
   font-size: 1.5rem;
   background: linear-gradient(180deg, rgba(221,220,222,1) 0%, rgba(134,165,228,1) 50%, rgba(221,220,222,0) 100%);
-  filter: url(#globalDisplacementFilter);
+  /*filter: url(#globalDisplacementFilter);*/
   transform: translate(3rem, 1rem);
 
 }

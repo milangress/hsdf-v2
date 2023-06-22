@@ -1,11 +1,12 @@
 <template lang="pug">
   .index-container
-    BackgroundBlur
-    StartOverlay
-    HeaderHome
-    nav
-      NuxtLink(to="about")
-        BlurBox(bg-color="white") About
+    //BackgroundBlur
+    //StartOverlay
+    //HeaderHome
+    //nav
+    //  NuxtLink(to="about")
+    //    BlurBox(bg-color="white") About
+    HeaderIconMenu
     .content
       HeadlineBox
         NuxtLink(:to="{path: `/living-matrix`}") Living Matrix
@@ -41,7 +42,7 @@ body {
 }
 
 .content {
-  height: 100vh;
+  /*height: 100vh;*/
 }
 nav {
   height: min-content;

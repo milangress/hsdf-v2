@@ -38,10 +38,10 @@ export default {
   /*padding: 1rem;*/
 }
 .box {
-  background-color: rgb(128, 124, 124);
+  background-color: rgb(206, 203, 203);
   border-radius: 2rem;
-  mix-blend-mode: soft-light;
-  backdrop-filter: blur(5px);
+  /*mix-blend-mode: soft-light;*/
+  /*backdrop-filter: blur(5px);*/
   position: relative;
   box-shadow: inset 0 0 2rem 10px #fff, inset 0 0 2rem 10px #fff;
   opacity: 1;

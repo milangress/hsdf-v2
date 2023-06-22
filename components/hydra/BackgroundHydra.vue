@@ -4,7 +4,10 @@
 </template>
 
 <script>
-const Hydra = require('hydra-synth')
+let Hydra
+if (process.client) {
+  Hydra = require('hydra-synth')
+}
 export default {
   name: "BackgroundHydra",
   mounted() {
