@@ -3,7 +3,7 @@
     .title
       HeaderIconMenuIcon(:menuItem="{name: 'About', icon: '/icons/Matrix_Tool_1.png', link: '/about'}")
       p.text.title-font <i>Unreal Entrprises</i> is the collaborative design & artist duo <i>Anna Janke</i> and <i>Milan Gress</i>. They are interested in the opaque connections between fiction, capitalist alienation, bodies and instant*impulse*gambling*dopamine magic. UE practice manifests through methods, tools, workshops and physical fictions. <i>Always keep your optimism/pessimism. <br> With love, Anna & Milan</i>
-      HeaderIconMenuIcon(:menuItem="{name: 'About', icon: '/icons/Matrix_Tool_1.png', link: '/about'}")
+      HeaderIconMenuIcon(:menuItem="{name: 'Plot/Slot', icon: '/icons/Matrix_Tool_1.png', link: '/about'}")
 
     .navigation
       HeaderIconMenuIcon(v-for="menuItem in menuItems" :key="menuItem.name" :menuItem="menuItem")
@@ -65,8 +65,10 @@ export default {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
   /*grid-gap: 5rem;*/
-  padding: 0 5rem;
+  padding: 2rem 5rem 0 5rem;
 }
 @media (max-width: 800px) {
   .navigation {
