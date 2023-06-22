@@ -1,9 +1,9 @@
 <template lang="pug">
-  NuxtLink.icon(:to="menuItem.link")
+  component.icon(:is="linkComponent" :to="menuItem.link" :href="menuItem.link")
     .icon(@mouseover="hover = true" @mouseleave="hover = false")
       .hoverText()
         p(:style="textStyle") {{menuItem.name}}
-      img.shimmer(:src="menuItem.icon")
+      img.shimmer(:src="menuItem.icon" :style="{padding: paddingRem + 'rem'}")
 
 </template>
 
@@ -14,6 +14,10 @@ export default {
     menuItem: {
       type: Object,
       required: true
+    },
+    paddingRem: {
+      type: Number,
+      default: 0.5
     }
   },
   data() {
@@ -31,6 +35,9 @@ export default {
       return {
         transform: `rotate(${Math.random()*10-5}deg) scale(0)`
       }
+    },
+    linkComponent() {
+      return this.menuItem.link.startsWith('/') ? 'NuxtLink' : 'a';
     }
   },
 };
@@ -42,6 +49,7 @@ export default {
   position: relative;
   contain: style layout;
   height: min-content;
+  cursor: pointer;
 }
 .hoverText {
   position: absolute;
