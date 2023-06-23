@@ -1,6 +1,6 @@
 <template lang="pug">
   .google-form-wrapper
-    button(@click="$emit('closeGoogleForm', true)") close
+    button(@click="$emit('closeGoogleForm', true)") close form
     iframe.google-form(:src="`https://docs.google.com/forms/d/e/1FAIpQLSdADPOukJXFqsM0IZu7HsS-tmXKhZyD-6N0af3pIrZga5YyNw/viewform?usp=pp_url&entry.255041987=${pos}`" frameborder="0")
 </template>
 
@@ -17,6 +17,22 @@ export default {
 </script>
 
 <style scoped>
+button {
+  display: block;
+  width: 100%;
+  padding: 0.5em 0 0.3em 0;
+  margin-block-end: 1rem;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 2px solid black;
+  transition: all 0.1s ease-in-out;
+  line-height: 1;
+  border-radius: 1em;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
 .google-form-wrapper {
   z-index: 100000;
   contain: strict;
