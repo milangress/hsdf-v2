@@ -12,6 +12,9 @@
       .line.vertical-1
       .line.vertical-2
       .text.text-left
+        p Unreal.Enterprises ist ein Forschungsprojekt gelegen an einem Nonplace* (Nontime) der <i>*FarTooReal_RealRealityDimension*</i>, mit einem Fokus auf der Entwicklung von Tools und Methodiken für einen partizipativen künstlerisch/prozessorientiert und –recherchenbasierten Gestaltungsprozess. Sowie der Untersuchung von Fiktionen anhand von deren Manifestation innerhalb eines künstlerischen Arbeitsprozesses 🡢 Fiktion als Praxis.
+        p Die Methode von HSDF (Thesis) umfasst — das Entwickeln eines fiktiven Szenarios durch text- und recherchenbasiertes arbeiten, sowie dessen Materialisierung als Objekt
+        br
         p »Highly Speculative Design Fiction« delivers FaaS — Future as a Service. How would our future be shaped by »a microscopic intimacy to forget about contemporary capitalism«? How could we dream together in »a motionless space apart from ›real‹ desire«? Could we paint a future »without the worst parts of bitter-sweet boomer magic«? or make »The first performance e-meeting in feminine physical space«?
 
         p Mit diversen Zukunftsszenarien, konkret gestalteten Werkzeugen, sowie realer Designartefakte wollen wir einen Dialog über die Möglichkeiten der Zukunft und die nötige visionäre Pluralität von Zukunftsbildern schaffen.
@@ -195,5 +198,8 @@ nav:hover {
   grid-column: 1 / -1;
   grid-row: 3;
   border-bottom: 2px solid red;
+}
+p+p {
+  padding-top: 1em;
 }
 </style>

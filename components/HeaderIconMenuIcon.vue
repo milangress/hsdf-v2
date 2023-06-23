@@ -17,7 +17,7 @@ export default {
     },
     scale: {
       type: Number,
-      default: 0.9
+      default: 0.85
     }
   },
   data() {

@@ -38,7 +38,7 @@ export default {
         {
           name: "Highly Speculative Design Fiction",
           icon: "/icons/HSDF-Logo-2022.png",
-          link: "/highly-speculative-design-fiction",
+          link: "/hsdf",
         },
         {
           name: "Workshops",
