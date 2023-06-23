@@ -3,7 +3,7 @@
     .icon(@mouseover="hover = true" @mouseleave="hover = false")
       .hoverText()
         p(:style="textStyle") {{menuItem.name}}
-      img.shimmer(:src="menuItem.icon" :style="{padding: paddingRem + 'rem'}")
+      img.shimmer(:src="menuItem.icon" :style="{transform: 'scale('+ scale + ')', '--timing': timing + 's'}")
 
 </template>
 
@@ -15,9 +15,9 @@ export default {
       type: Object,
       required: true
     },
-    paddingRem: {
+    scale: {
       type: Number,
-      default: 0.5
+      default: 0.9
     }
   },
   data() {
@@ -38,6 +38,9 @@ export default {
     },
     linkComponent() {
       return this.menuItem.link.startsWith('/') ? 'NuxtLink' : 'a';
+    },
+    timing() {
+      return Math.random() + 2;
     }
   },
 };
@@ -72,13 +75,16 @@ img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 0.5s;
+  transition: transform 0.1s;
   padding-inline: 3rem;
+}
+img:hover {
+  transform: scale(1.1);
 }
 .shimmer {
   -webkit-mask: linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
   background-repeat: no-repeat;
-  animation: shimmer 2.5s infinite;
+  animation: shimmer var(--timing) infinite;
 }
 
 @keyframes shimmer {
