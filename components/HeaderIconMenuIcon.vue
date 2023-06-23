@@ -75,8 +75,11 @@ img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 0.5s;
+  transition: transform 0.1s;
   padding-inline: 3rem;
+}
+img:hover {
+  transform: scale(1.1);
 }
 .shimmer {
   -webkit-mask: linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
