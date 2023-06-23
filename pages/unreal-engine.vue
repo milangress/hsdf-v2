@@ -13,7 +13,8 @@
     p It calls for you to describe a piece of that reality, maybe a human, potentially a non-human, an animal or a plant, a place or a feeling, perhaps the taste it leaves in your mouth? Imagine these places and write a letter to it: as a letter of appreciation where you praise it for its qualities, perhaps a joke, a map or a letter to finally put your anxiousness and uncertainty into words. After that, we ask you to leave your letter in the ever-changing archive of the Unreal Engine, so together we can reformulate what this archive is for and what it computes."
 
     p I open my eyes again as your reality melts with the reality of the Unreal Engine. I recall the stone in my shoes. As a child, I was always putting small stones in my shoes to remember that I have a body, to remember that the ground is real. You didn't seem to care. I stand up, having a sensory meltdown, overwhelmed by my own textualitys. We are both exhausted and drenched in sweat. But yet, a part of me stays behind at that table... stuck between theory and praxis.
-
+    .iframeWrapper
+      iframe(:src="`https://www.yourworldoftext.com/~Unreal-Engine_02/`", width="100%", height="100%")
 </template>
 
 <script>
@@ -28,5 +29,17 @@ export default {
 <style scoped>
 p + p {
   margin-top: 1em;
+}
+.iframeWrapper {
+  width: 150%;
+  height: 150%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: scale(0.75);
+  transform-origin: top left;
+}
+iframe {
 }
 </style>
