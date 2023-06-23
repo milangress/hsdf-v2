@@ -25,6 +25,11 @@ export default {
       hover: false
     };
   },
+  mounted() {
+    if ("ontouchstart" in document.documentElement) {
+      this.hover = true;
+    }
+  },
   computed: {
     textStyle() {
       if (this.hover) {

@@ -10,9 +10,10 @@
     .content
       HeadlineBox
         NuxtLink(:to="{path: `/living-matrix`}") Living Matrix
+      p.lm-text.title-font <i>The Living Matrix</i> organizes diverse possibilities in the form of words and images, placing them in a proximity to each other. You are welcome to click anywhere on the living matrix to add something of your own.
       LivingMatrixHomeWithBG
-      HeadlineBox Tools
-      ProjectLinks
+      //HeadlineBox Tools
+      //ProjectLinks
 
 
 
@@ -60,5 +61,10 @@ nav a {
 nav:hover {
   /*filter: saturate(40000);*/
   mix-blend-mode: color-dodge;
+}
+.lm-text {
+  max-width: 70vw;
+  margin: 1.5rem auto;
+  font-size: 2rem;
 }
 </style>

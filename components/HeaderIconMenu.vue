@@ -1,9 +1,9 @@
 <template lang="pug">
   .head
     .title
-      HeaderIconMenuIcon(:menuItem="{name: 'About', icon: '/icons/about.png', link: '/about'}" :scale="0.5")
-      p.text.title-font <i>Unreal Entrprises</i> is the collaborative design & artist duo <i>Anna Janke</i> and <i>Milan Gress</i>. They are interested in the opaque connections between fiction, capitalist alienation, bodies and instant*impulse*gambling*dopamine magic. UE practice manifests through methods, tools, workshops and physical fictions. <i>Always keep your optimism/pessimism. <br> With love, Anna & Milan</i>
-      HeaderIconMenuIcon(:menuItem="{name: 'Plot/Slot', icon: '/icons/Matrix_Tool_1.png', link: 'https://plot-slot.unreal.enterprises/'}")
+      HeaderIconMenuIcon.side(:menuItem="{name: 'About', icon: '/icons/about.png', link: '/about'}" :scale="0.5")
+      p.text.title-font <i>Unreal Entrprises</i> is the collaborative design & artist duo <i>Anna Janke</i> and <i>Milan Gress</i>. They are interested in the opaque connections between fiction, capitalist alienation, bodies and instant*<wbr>impulse*<wbr>gambling*<wbr>dopamine magic. UE practice manifests through methods, tools, workshops and physical fictions. <i>Always keep your optimism/pessimism. <br> With love, Anna & Milan</i>
+      HeaderIconMenuIcon.side(:menuItem="{name: 'Plot/Slot', icon: '/icons/Matrix_Tool_1.png', link: 'https://plot-slot.unreal.enterprises/'}")
 
     .navigation
       HeaderIconMenuIcon(v-for="menuItem in menuItems" :key="menuItem.name" :menuItem="menuItem")
@@ -57,6 +57,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr 60vw 1fr;
 }
+
 .text {
   padding-top: 2rem;
   margin: 0 auto;
@@ -77,6 +78,17 @@ export default {
     padding: 0 2rem;
     grid-gap: 1rem;
   }
+  .title {
+    grid-template-columns: 1fr 1fr;
+  }
+  .text {
+    max-width: 90vw;
+    grid-column: span 2;
+  }
+  .side {
+    grid-row: 2;
+  }
+
 }
 @media (max-width: 600px) {
   .navigation {
