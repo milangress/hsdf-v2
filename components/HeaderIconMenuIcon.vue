@@ -3,7 +3,7 @@
     .icon(@mouseover="hover = true" @mouseleave="hover = false")
       .hoverText()
         p(:style="textStyle") {{menuItem.name}}
-      img.shimmer(:src="menuItem.icon" :style="{padding: paddingRem + 'rem'}")
+      img.shimmer(:src="menuItem.icon" :style="{transform: 'scale('+ scale + ')'}")
 
 </template>
 
@@ -15,9 +15,9 @@ export default {
       type: Object,
       required: true
     },
-    paddingRem: {
+    scale: {
       type: Number,
-      default: 0.5
+      default: 0.9
     }
   },
   data() {
