@@ -52,6 +52,10 @@ export default {
 </script>
 
 <style scoped>
+.head {
+  width: 100vw;
+  overflow: hidden;
+}
 .title {
   width: 100%;
   display: grid;
@@ -82,8 +86,9 @@ export default {
     grid-template-columns: 1fr 1fr;
   }
   .text {
-    max-width: 90vw;
+    max-width: 70vw;
     grid-column: span 2;
+    font-size: 1.3em;
   }
   .side {
     grid-row: 2;
