@@ -54,7 +54,8 @@ export default {
 <style scoped>
 .title {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 60vw 1fr;
 }
 .text {
   padding-top: 2rem;
