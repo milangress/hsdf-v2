@@ -3,7 +3,7 @@
     .title
       HeaderIconMenuIcon.side(:menuItem="{name: 'About', icon: '/icons/about.png', link: '/about'}" :scale="0.5")
       p.text.title-font <i>Unreal Entrprises</i> [<i>www.unreal.enterprises</i>] is the collaborative design & artist duo <i>Anna Janke</i> and <i>Milan Gress</i>. They are interested in the opaque connections between fiction, capitalist alienation, bodies and instant*<wbr>impulse*<wbr>gambling*<wbr>dopamine magic. UE practice manifests through methods, tools, workshops and physical fictions. <i>Always keep your optimism/pessimism. <br> With love, Anna & Milan</i>
-      HeaderIconMenuIcon.side(:menuItem="{name: 'Plot/Slot', icon: '/icons/Matrix_Tool_1.png', link: 'https://plot-slot.unreal.enterprises/'}")
+      HeaderIconMenuIcon.side(:menuItem="{name: 'Plot/Slot', icon: '/icons/Slot-machine.png', link: 'https://plot-slot.unreal.enterprises/'}")
 
     .navigation
       HeaderIconMenuIcon(v-for="menuItem in menuItems" :key="menuItem.name" :menuItem="menuItem")
