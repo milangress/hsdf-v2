@@ -113,8 +113,9 @@ export const actions = {
       if (state.markers.length <= 2) {
         // eslint-disable-next-line no-console
         // console.log('load new Markers')
+        const apiKey = this.$config.sheetApiSecret || this.$config.sheetApi
         const sheetID = '1-NM2-oXiVyXAK2MiGiGS2R6VSnC1wHipyr-GrOZLxAE'
-        const sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/0!A1:Z1001?majorDimension=ROWS&key=${this.$config.sheetApiSecret}`
+        const sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/0!A1:Z1001?majorDimension=ROWS&key=${apiKey}`
         const getResults = await fetch(sheetUrl).then(response => response.json())
         // eslint-disable-next-line no-console
         // console.log(getResults)
