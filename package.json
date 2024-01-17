@@ -2,6 +2,9 @@
   "name": "unreal-enterprises",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "v18.16.0"
+  },
   "scripts": {
     "dev": "nuxt --port 5050",
     "build": "nuxt build",
