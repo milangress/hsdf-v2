@@ -25,17 +25,19 @@
     "isomorphic-dompurify": "^1.6.0",
     "marked": "^5.1.0",
     "motion": "^10.16.2",
-    "nuxt": "^2.15.8",
+    "nuxt": "^2.16.2",
     "postcss-easing-gradients": "^3.0.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.9",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
+    "postcss": "^8.4.33",
     "prettier": "^2.3.2",
     "vue-cli-plugin-pug": "~2.0.0"
   }
