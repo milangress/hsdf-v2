@@ -6,10 +6,10 @@
     "node": "v18.16.0"
   },
   "scripts": {
-    "dev": "nuxt --port 5050",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
+    "dev": "npx nuxt --port 5050",
+    "build": "npx nuxt build",
+    "start": "npx nuxt start",
+    "generate": "npx nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js"
   },
