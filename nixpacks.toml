@@ -1,0 +1,17 @@
+[phases.setup]
+nixPkgs = [
+  "nodejs_18",
+  "npm-8_x"
+]
+
+[phases.install]
+cmds = [
+  "npm ci",
+  "npm install -g nuxt"
+]
+
+[phases.build]
+cmds = ["nuxt build"]
+
+[start]
+cmd = "nuxt start"
